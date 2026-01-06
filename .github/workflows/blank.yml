@@ -30,6 +30,7 @@ jobs:
           WELSTORY_USERNAME: ${{ secrets.WELSTORY_USERNAME }}
           WELSTORY_PASSWORD: ${{ secrets.WELSTORY_PASSWORD }}
         run: |
+          ls -la
           node fetch-menu.js
 
       - name: Commit and push changes
