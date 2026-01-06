@@ -1,15 +1,17 @@
 /**
- * Welstory Menu Viewer - GitHub Data Version
+ * Welstory Menu Viewer - Dual Floor Version
  */
 
-// GitHub raw URL
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/C4T4767/ssabap/main/data'
+// GitHub raw URLs
+const GITHUB_RAW_URL_20F = 'https://raw.githubusercontent.com/C4T4767/ssabap/main/data'
+const GITHUB_RAW_URL_10F = 'https://raw.githubusercontent.com/C4T4767/ssabap/main/data-10f'
 
 // DOM 요소
 const dateInput = document.getElementById('dateInput')
 const prevDayBtn = document.getElementById('prevDayBtn')
 const nextDayBtn = document.getElementById('nextDayBtn')
-const mealsContainer = document.getElementById('mealsContainer')
+const meals20FContainer = document.getElementById('meals20FContainer')
+const meals10FContainer = document.getElementById('meals10FContainer')
 const loading = document.getElementById('loading')
 const errorDiv = document.getElementById('error')
 
@@ -17,13 +19,13 @@ const errorDiv = document.getElementById('error')
 document.addEventListener('DOMContentLoaded', () => {
     const today = new Date()
     dateInput.valueAsDate = today
-    loadMenu()
+    loadAllMenus()
 })
 
 /**
- * 메뉴 로드
+ * 모든 메뉴 로드 (20층 + 10층)
  */
-async function loadMenu() {
+async function loadAllMenus() {
     const date = dateInput.value
 
     if (!date) {
@@ -33,43 +35,64 @@ async function loadMenu() {
 
     try {
         loading.classList.remove('hidden')
-        mealsContainer.innerHTML = ''
+        meals20FContainer.innerHTML = ''
+        meals10FContainer.innerHTML = ''
         errorDiv.textContent = ''
 
-        const url = `${GITHUB_RAW_URL}/${date}.json`
-        console.log('Fetching:', url)
+        // 20층과 10층 메뉴를 동시에 로드
+        const [data20F, data10F] = await Promise.all([
+            fetchMenu(GITHUB_RAW_URL_20F, date),
+            fetchMenu(GITHUB_RAW_URL_10F, date)
+        ])
 
-        const response = await fetch(url)
-
-        if (!response.ok) {
-            throw new Error(`데이터를 찾을 수 없습니다 (${response.status})`)
+        // 20층 메뉴 표시
+        if (data20F && data20F.meals && data20F.meals.length > 0) {
+            display20FMeals(data20F.meals)
+        } else {
+            meals20FContainer.innerHTML = '<p class="no-data">해당 날짜에 메뉴가 없습니다</p>'
         }
 
-        const data = await response.json()
-
-        if (!data.meals || data.meals.length === 0) {
-            mealsContainer.innerHTML = '<p class="no-data">해당 날짜에 메뉴가 없습니다</p>'
-            return
+        // 10층 메뉴 표시
+        if (data10F && data10F.meals && data10F.meals.length > 0) {
+            display10FMeals(data10F.meals)
+        } else {
+            meals10FContainer.innerHTML = '<p class="no-data">해당 날짜에 메뉴가 없습니다</p>'
         }
-
-        displayMeals(data.meals)
     } catch (error) {
         console.error('메뉴 로드 실패:', error)
         errorDiv.textContent = `메뉴 로드 실패: ${error.message}`
-
-        if (error.message.includes('404')) {
-            errorDiv.textContent = '해당 날짜의 메뉴 데이터가 아직 준비되지 않았습니다'
-        }
     } finally {
         loading.classList.add('hidden')
     }
 }
 
 /**
- * 메뉴 표시
+ * 메뉴 데이터 가져오기
  */
-function displayMeals(meals) {
-    mealsContainer.innerHTML = ''
+async function fetchMenu(baseUrl, date) {
+    try {
+        const url = `${baseUrl}/${date}.json`
+        console.log('Fetching:', url)
+
+        const response = await fetch(url)
+
+        if (!response.ok) {
+            console.warn(`데이터를 찾을 수 없습니다: ${url}`)
+            return null
+        }
+
+        return await response.json()
+    } catch (error) {
+        console.error('Fetch error:', error)
+        return null
+    }
+}
+
+/**
+ * 20층 메뉴 표시
+ */
+function display20FMeals(meals) {
+    meals20FContainer.innerHTML = ''
 
     meals.forEach(meal => {
         const mealCard = document.createElement('div')
@@ -78,10 +101,10 @@ function displayMeals(meals) {
         const mealHeader = document.createElement('div')
         mealHeader.className = 'meal-header'
         mealHeader.innerHTML = `
-      <h3>${meal.courseName}</h3>
-      <p class="meal-name">${meal.name}</p>
-      ${meal.setName ? `<p class="set-name">${meal.setName}</p>` : ''}
-    `
+            <h3>${meal.courseName}</h3>
+            <p class="meal-name">${meal.name}</p>
+            ${meal.setName ? `<p class="set-name">${meal.setName}</p>` : ''}
+        `
 
         mealCard.appendChild(mealHeader)
 
@@ -106,7 +129,37 @@ function displayMeals(meals) {
             mealCard.appendChild(nutritionDiv)
         }
 
-        mealsContainer.appendChild(mealCard)
+        meals20FContainer.appendChild(mealCard)
+    })
+}
+
+/**
+ * 10층 메뉴 표시
+ */
+function display10FMeals(meals) {
+    meals10FContainer.innerHTML = ''
+
+    meals.forEach(meal => {
+        const mealCard = document.createElement('div')
+        mealCard.className = 'meal-card meal-card-10f'
+
+        const mealHeader = document.createElement('div')
+        mealHeader.className = 'meal-header'
+        mealHeader.innerHTML = `
+            <h3>${meal.courseName}</h3>
+        `
+
+        mealCard.appendChild(mealHeader)
+
+        // items 배열 표시
+        if (meal.items && meal.items.length > 0) {
+            const itemsList = document.createElement('div')
+            itemsList.className = 'menu-items'
+            itemsList.innerHTML = '<ul>' + meal.items.map(item => `<li>${item}</li>`).join('') + '</ul>'
+            mealCard.appendChild(itemsList)
+        }
+
+        meals10FContainer.appendChild(mealCard)
     })
 }
 
@@ -125,14 +178,14 @@ function toggleNutrition(mealCard, nutrition) {
 
     nutrition.forEach(n => {
         html += `
-      <tr>
-        <td>${n.name}${n.isMain ? ' ⭐' : ''}</td>
-        <td>${n.calorie}kcal</td>
-        <td>${n.carbohydrate}g</td>
-        <td>${n.protein}g</td>
-        <td>${n.fat}g</td>
-      </tr>
-    `
+            <tr>
+                <td>${n.name}${n.isMain ? ' ⭐' : ''}</td>
+                <td>${n.calorie}kcal</td>
+                <td>${n.carbohydrate}g</td>
+                <td>${n.protein}g</td>
+                <td>${n.fat}g</td>
+            </tr>
+        `
     })
 
     html += '</tbody></table>'
@@ -141,14 +194,14 @@ function toggleNutrition(mealCard, nutrition) {
 }
 
 // 날짜 변경 이벤트
-dateInput.addEventListener('change', loadMenu)
+dateInput.addEventListener('change', loadAllMenus)
 
 // 이전 날짜
 prevDayBtn.addEventListener('click', () => {
     const currentDate = new Date(dateInput.value)
     currentDate.setDate(currentDate.getDate() - 1)
     dateInput.valueAsDate = currentDate
-    loadMenu()
+    loadAllMenus()
 })
 
 // 다음 날짜
@@ -156,5 +209,5 @@ nextDayBtn.addEventListener('click', () => {
     const currentDate = new Date(dateInput.value)
     currentDate.setDate(currentDate.getDate() + 1)
     dateInput.valueAsDate = currentDate
-    loadMenu()
+    loadAllMenus()
 })
