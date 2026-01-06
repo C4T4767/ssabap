@@ -22,12 +22,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install @google-cloud/vision
+        run: npm install openai
 
-      - name: Setup Google Cloud credentials
+      - name: Setup OpenAI API Key
         run: |
-          echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > $HOME/gcloud-key.json
-          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud-key.json" >> $GITHUB_ENV
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
 
       - name: Find new PNG files
         id: find-images
@@ -51,6 +50,22 @@ jobs:
         if: steps.find-images.outputs.has_new_images == 'true'
         run: |
           node parse-10f-menu.js "${{ steps.find-images.outputs.image_path }}"
+
+      - name: Display parsed results
+        if: steps.find-images.outputs.has_new_images == 'true'
+        run: |
+          echo "📊 Parsed JSON files:"
+          echo "===================="
+          for file in data-10f/*.json; do
+            if [ -f "$file" ]; then
+              echo ""
+              echo "📄 File: $file"
+              echo "---"
+              cat "$file"
+              echo ""
+              echo "===================="
+            fi
+          done
 
       - name: Commit and push changes
         if: steps.find-images.outputs.has_new_images == 'true'

@@ -5,7 +5,7 @@
 ## 📋 개요
 
 - **20층 식단**: Welstory API를 통해 자동으로 7일치 식단 데이터 수집
-- **10층 식단**: PNG 이미지를 Google Cloud Vision API로 파싱하여 JSON 변환
+- **10층 식단**: PNG 이미지를 OpenAI GPT-4 Vision으로 파싱하여 JSON 변환
 
 ## 🏗️ 프로젝트 구조
 
@@ -31,11 +31,12 @@
 - `WELSTORY_USERNAME`: Welstory 계정 아이디
 - `WELSTORY_PASSWORD`: Welstory 계정 비밀번호
 
-#### 10층 식단용 (Google Cloud Vision API)
-1. [Google Cloud Console](https://console.cloud.google.com/)에서 프로젝트 생성
-2. Cloud Vision API 활성화
-3. 서비스 계정 생성 및 JSON 키 다운로드
-4. GitHub Secrets에 `GOOGLE_CLOUD_CREDENTIALS` 추가 (JSON 파일 내용 전체)
+#### 10층 식단용 (OpenAI API)
+1. [OpenAI Platform](https://platform.openai.com/)에서 계정 생성
+2. API Keys 페이지에서 새 API 키 생성
+3. GitHub Secrets에 `OPENAI_API_KEY` 추가
+
+> 💡 **비용**: GPT-4o-mini 사용 시 이미지당 약 $0.001-0.003 (매우 저렴)
 
 ### 2. 20층 식단 자동 수집
 
@@ -125,8 +126,8 @@ node fetch-menu.js
 
 ### 10층 식단 파싱
 ```bash
-# Google Cloud 인증 설정
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/gcloud-key.json"
+# OpenAI API 키 설정
+export OPENAI_API_KEY="your_openai_api_key"
 
 # 스크립트 실행
 node parse-10f-menu.js images/멀티캠퍼스(10층)_공존식단_26년_1월_2주차.png
