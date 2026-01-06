@@ -22,11 +22,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install openai
+        run: npm install @google/generative-ai
 
-      - name: Setup OpenAI API Key
+      - name: Setup Gemini API Key
         run: |
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
 
       - name: Find new PNG files
         id: find-images

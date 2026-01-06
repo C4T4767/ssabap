@@ -1,12 +1,11 @@
-const OpenAI = require('openai')
+const { GoogleGenerativeAI } = require('@google/generative-ai')
 const fs = require('fs')
 const path = require('path')
 
 async function parseMenuImage(imagePath) {
-    // OpenAI API 클라이언트 생성
-    const openai = new OpenAI({
-        apiKey: process.env.OPENAI_API_KEY
-    })
+    // Google Gemini API 클라이언트 생성
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
     console.log(`Parsing image: ${imagePath}`)
 
@@ -14,21 +13,17 @@ async function parseMenuImage(imagePath) {
         // 이미지를 base64로 인코딩
         const imageBuffer = fs.readFileSync(imagePath)
         const base64Image = imageBuffer.toString('base64')
-        const imageExtension = path.extname(imagePath).substring(1)
-        const mimeType = `image/${imageExtension}`
+        const imageExtension = path.extname(imagePath).substring(1).toLowerCase()
 
-        console.log('Sending image to GPT-4 Vision...')
+        // MIME 타입 결정
+        let mimeType = 'image/png'
+        if (imageExtension === 'jpg' || imageExtension === 'jpeg') {
+            mimeType = 'image/jpeg'
+        }
 
-        // GPT-4 Vision API 호출
-        const response = await openai.chat.completions.create({
-            model: "gpt-4o-mini",
-            messages: [
-                {
-                    role: "user",
-                    content: [
-                        {
-                            type: "text",
-                            text: `이 이미지는 멀티캠퍼스 10층 식당의 주간 식단표입니다.
+        console.log('Sending image to Gemini...')
+
+        const prompt = `이 이미지는 멀티캠퍼스 10층 식당의 주간 식단표입니다.
 
 이미지를 분석해서 각 요일(월요일~금요일)의 식단을 JSON 형식으로 정리해주세요.
 
@@ -57,28 +52,36 @@ JSON 형식:
 
 메뉴 이름은 이미지에 표시된 그대로 정확하게 적어주세요.
 JSON만 출력하고 다른 설명은 하지 마세요.`
-                        },
-                        {
-                            type: "image_url",
-                            image_url: {
-                                url: `data:${mimeType};base64,${base64Image}`
-                            }
-                        }
-                    ]
-                }
-            ],
-            max_tokens: 2000
-        })
 
-        const content = response.choices[0].message.content
-        console.log('GPT Response:')
+        // Gemini API 호출
+        const result = await model.generateContent([
+            prompt,
+            {
+                inlineData: {
+                    data: base64Image,
+                    mimeType: mimeType
+                }
+            }
+        ])
+
+        const response = await result.response
+        const content = response.text()
+
+        console.log('Gemini Response:')
         console.log(content)
         console.log('\n---\n')
 
-        // JSON 파싱
-        const jsonMatch = content.match(/\{[\s\S]*\}/)
+        // JSON 파싱 (```json ... ``` 형식도 처리)
+        let jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/)
+        if (jsonMatch) {
+            const menuData = JSON.parse(jsonMatch[1])
+            return menuData
+        }
+
+        // 일반 JSON 형식
+        jsonMatch = content.match(/\{[\s\S]*\}/)
         if (!jsonMatch) {
-            throw new Error('Failed to extract JSON from GPT response')
+            throw new Error('Failed to extract JSON from Gemini response')
         }
 
         const menuData = JSON.parse(jsonMatch[0])
@@ -194,8 +197,8 @@ async function main() {
         process.exit(1)
     }
 
-    if (!process.env.OPENAI_API_KEY) {
-        console.error('Error: OPENAI_API_KEY environment variable is not set')
+    if (!process.env.GEMINI_API_KEY) {
+        console.error('Error: GEMINI_API_KEY environment variable is not set')
         process.exit(1)
     }
 
@@ -231,4 +234,3 @@ async function main() {
 }
 
 main()
-
