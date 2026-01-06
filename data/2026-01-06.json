@@ -1,0 +1,164 @@
+{
+  "date": "2026-01-06",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "대파육개장",
+      "courseName": "A:한식",
+      "setName": "대파육개장&오징어완자전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260106/s20240619104209.png",
+      "nutrition": [
+        {
+          "name": "대파육개장",
+          "isMain": true,
+          "calorie": 253,
+          "carbohydrate": 8,
+          "sugar": 4,
+          "fiber": 4,
+          "fat": 16,
+          "protein": 18
+        },
+        {
+          "name": "현미밥",
+          "isMain": false,
+          "calorie": 346,
+          "carbohydrate": 78,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "오징어완자전",
+          "isMain": false,
+          "calorie": 215,
+          "carbohydrate": 19,
+          "sugar": 3,
+          "fiber": 1,
+          "fat": 9,
+          "protein": 16
+        },
+        {
+          "name": "마늘종건새우볶음",
+          "isMain": false,
+          "calorie": 84,
+          "carbohydrate": 10,
+          "sugar": 5,
+          "fiber": 2,
+          "fat": 4,
+          "protein": 3
+        },
+        {
+          "name": "부추초간장무침",
+          "isMain": false,
+          "calorie": 22,
+          "carbohydrate": 5,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 15,
+          "carbohydrate": 2,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "ICE초코",
+          "isMain": false,
+          "calorie": 41,
+          "carbohydrate": 7,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    },
+    {
+      "name": "해물볶음우동",
+      "courseName": "B:일품",
+      "setName": "해물볶음우동&채소튀김",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/main/100026/1329.png",
+      "nutrition": [
+        {
+          "name": "해물볶음우동",
+          "isMain": true,
+          "calorie": 608,
+          "carbohydrate": 96,
+          "sugar": 13,
+          "fiber": 6,
+          "fat": 12,
+          "protein": 23
+        },
+        {
+          "name": "가다랭이국",
+          "isMain": false,
+          "calorie": 4,
+          "carbohydrate": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "김가루양념밥",
+          "isMain": false,
+          "calorie": 225,
+          "carbohydrate": 49,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 4
+        },
+        {
+          "name": "채소튀김",
+          "isMain": false,
+          "calorie": 242,
+          "carbohydrate": 49,
+          "sugar": 5,
+          "fiber": 3,
+          "fat": 4,
+          "protein": 5
+        },
+        {
+          "name": "멕시칸샐러드",
+          "isMain": false,
+          "calorie": 192,
+          "carbohydrate": 14,
+          "sugar": 5,
+          "fiber": 1,
+          "fat": 12,
+          "protein": 6
+        },
+        {
+          "name": "오복지무침",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "ICE초코",
+          "isMain": false,
+          "calorie": 41,
+          "carbohydrate": 7,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-06T04:26:27.220Z"
+}
