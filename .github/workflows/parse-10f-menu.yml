@@ -1,0 +1,62 @@
+name: Parse 10F Menu
+
+on:
+  push:
+    paths:
+      - 'images/*.png'
+      - 'images/*.PNG'
+
+jobs:
+  parse-menu:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 이전 커밋과 비교하기 위해 2개 가져오기
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install @google-cloud/vision
+
+      - name: Setup Google Cloud credentials
+        run: |
+          echo "${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}" > $HOME/gcloud-key.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/gcloud-key.json" >> $GITHUB_ENV
+
+      - name: Find new PNG files
+        id: find-images
+        run: |
+          # Git diff로 새로 추가된 PNG 파일 찾기
+          NEW_IMAGES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep -E 'images/.*\.(png|PNG)$' || true)
+          
+          if [ -z "$NEW_IMAGES" ]; then
+            echo "No new PNG files found"
+            echo "has_new_images=false" >> $GITHUB_OUTPUT
+          else
+            echo "Found new images:"
+            echo "$NEW_IMAGES"
+            echo "has_new_images=true" >> $GITHUB_OUTPUT
+            # 첫 번째 이미지만 사용 (여러 개 있을 경우)
+            FIRST_IMAGE=$(echo "$NEW_IMAGES" | head -n 1)
+            echo "image_path=$FIRST_IMAGE" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Parse menu image
+        if: steps.find-images.outputs.has_new_images == 'true'
+        run: |
+          node parse-10f-menu.js "${{ steps.find-images.outputs.image_path }}"
+
+      - name: Commit and push changes
+        if: steps.find-images.outputs.has_new_images == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data-10f/*.json
+          git commit -m "Add 10F menu data from ${{ steps.find-images.outputs.image_path }}" || echo "No changes to commit"
+          git push
