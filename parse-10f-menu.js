@@ -5,7 +5,7 @@ const path = require('path')
 async function parseMenuImage(imagePath) {
     // Google Gemini API 클라이언트 생성
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+    const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" })
 
     console.log(`Parsing image: ${imagePath}`)
 
