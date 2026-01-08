@@ -2,14 +2,7 @@
 
 ## 📦 설치 방법
 
-1. **GitHub 저장소 URL 설정**
-   - `popup.js` 파일 6번 줄 수정:
-   ```javascript
-   const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/YOUR_USERNAME/ssabap/main/data'
-   ```
-   - `YOUR_USERNAME`을 본인의 GitHub 사용자명으로 변경
-
-2. **크롬 확장 프로그램 로드**
+**크롬 확장 프로그램 로드**
    - 크롬에서 `chrome://extensions/` 열기
    - 우측 상단 "개발자 모드" ON
    - "압축해제된 확장 프로그램을 로드합니다" 클릭
