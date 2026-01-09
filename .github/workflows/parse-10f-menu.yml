@@ -5,7 +5,7 @@ on:
     paths:
       - 'images/**'
   workflow_dispatch:
-  
+
 jobs:
   parse-menu:
     runs-on: ubuntu-latest
@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # rebase 위해 전체 히스토리
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -60,7 +62,7 @@ jobs:
             fi
           done
 
-      - name: Commit and push results
+      - name: Commit and push results safely
         if: steps.find-images.outputs.has_images == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -70,7 +72,12 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "Parse 10F menu images"
-            git push
+            exit 0
           fi
+
+          git commit -m "Parse 10F menu images"
+
+          # 최신 main 위로 재배치 (동시 실행 대비)
+          git pull --rebase origin main
+
+          git push origin main
