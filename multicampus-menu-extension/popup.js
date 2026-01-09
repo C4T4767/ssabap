@@ -12,13 +12,24 @@ const prevDayBtn = document.getElementById('prevDayBtn')
 const nextDayBtn = document.getElementById('nextDayBtn')
 const meals20FContainer = document.getElementById('meals20FContainer')
 const meals10FContainer = document.getElementById('meals10FContainer')
-const loading = document.getElementById('loading')
-const errorDiv = document.getElementById('error')
+
+// 요일 표시 업데이트
+function updateDayOfWeek() {
+    const date = new Date(dateInput.value)
+    const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+    const dayOfWeek = days[date.getDay()]
+    
+    const dayDisplay = document.getElementById('dayDisplay')
+    if (dayDisplay) {
+        dayDisplay.textContent = dayOfWeek
+    }
+}
 
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
     const today = new Date()
     dateInput.valueAsDate = today
+    updateDayOfWeek()
     loadAllMenus()
 })
 
@@ -29,15 +40,12 @@ async function loadAllMenus() {
     const date = dateInput.value
 
     if (!date) {
-        errorDiv.textContent = '날짜를 선택하세요'
         return
     }
 
     try {
-        loading.classList.remove('hidden')
         meals20FContainer.innerHTML = ''
         meals10FContainer.innerHTML = ''
-        errorDiv.textContent = ''
 
         // 20층과 10층 메뉴를 동시에 로드
         const [data20F, data10F] = await Promise.all([
@@ -60,9 +68,7 @@ async function loadAllMenus() {
         }
     } catch (error) {
         console.error('메뉴 로드 실패:', error)
-        errorDiv.textContent = `메뉴 로드 실패: ${error.message}`
     } finally {
-        loading.classList.add('hidden')
     }
 }
 
@@ -71,7 +77,9 @@ async function loadAllMenus() {
  */
 async function fetchMenu(baseUrl, date) {
     try {
-        const url = `${baseUrl}/${date}.json`
+        // 캐시 무효화를 위한 타임스탬프 추가
+        const timestamp = Math.floor(Date.now() / 60000) // 1분마다 갱신
+        const url = `${baseUrl}/${date}.json?t=${timestamp}`
         console.log('Fetching:', url)
 
         const response = await fetch(url)
@@ -89,44 +97,108 @@ async function fetchMenu(baseUrl, date) {
 }
 
 /**
- * 20층 메뉴 표시
+ * 20층 메뉴 표시 (압축 보드형)
  */
 function display20FMeals(meals) {
     meals20FContainer.innerHTML = ''
 
     meals.forEach(meal => {
         const mealCard = document.createElement('div')
-        mealCard.className = 'meal-card'
+        mealCard.className = 'meal-board'
 
-        const mealHeader = document.createElement('div')
-        mealHeader.className = 'meal-header'
-        mealHeader.innerHTML = `
-            <h3>${meal.courseName}</h3>
-            <p class="meal-name">${meal.name}</p>
-            ${meal.setName ? `<p class="set-name">${meal.setName}</p>` : ''}
+        // 총 칼로리 계산
+        const totalCalories = meal.nutrition ? meal.nutrition.reduce((sum, item) => sum + item.calorie, 0) : 0
+        const mainDish = meal.nutrition ? meal.nutrition.find(item => item.isMain) : null
+
+        // 헤더 (코스명 | 메인메뉴 | 총칼로리 | 아이콘)
+        const header = document.createElement('div')
+        header.className = 'board-header'
+        header.innerHTML = `
+            <div class="board-title">
+                <span class="course-badge">${meal.courseName}</span>
+                <span class="main-dish">${mainDish ? mainDish.name : meal.name}</span>
+                ${mainDish ? '<span class="star">⭐</span>' : ''}
+            </div>
+            <div class="board-actions">
+                <span class="total-cal">${totalCalories} kcal</span>
+                ${meal.nutrition && meal.nutrition.length > 0 ? '<button class="icon-btn" data-action="nutrition" title="영양 정보">ℹ️</button>' : ''}
+            </div>
         `
+        mealCard.appendChild(header)
 
-        mealCard.appendChild(mealHeader)
+        // 메뉴 + 이미지 컨테이너
+        const contentContainer = document.createElement('div')
+        contentContainer.className = 'board-content'
 
-        if (meal.photoUrl) {
-            const img = document.createElement('img')
-            img.src = meal.photoUrl
-            img.alt = meal.name
-            img.className = 'meal-photo'
-            img.onerror = () => img.style.display = 'none'
-            mealCard.appendChild(img)
+        // 구성 메뉴 (인라인 리스트)
+        if (meal.nutrition && meal.nutrition.length > 0) {
+            const menuList = document.createElement('div')
+            menuList.className = 'inline-menu-list'
+
+            const items = meal.nutrition.map(item => {
+                return `<span class="menu-chip">${item.name} <span class="chip-cal">${item.calorie}</span></span>`
+            }).join('')
+
+            menuList.innerHTML = items
+            contentContainer.appendChild(menuList)
         }
 
-        if (meal.nutrition && meal.nutrition.length > 0) {
-            const nutritionBtn = document.createElement('button')
-            nutritionBtn.className = 'btn btn-small'
-            nutritionBtn.textContent = '영양 정보'
-            nutritionBtn.onclick = () => toggleNutrition(mealCard, meal.nutrition)
-            mealCard.appendChild(nutritionBtn)
+        // 썸네일 이미지 (오른쪽)
+        if (meal.photoUrl) {
+            const thumbnail = document.createElement('img')
+            thumbnail.src = meal.photoUrl
+            thumbnail.alt = meal.name
+            thumbnail.className = 'board-thumbnail'
+            thumbnail.onerror = () => thumbnail.style.display = 'none'
+            thumbnail.onclick = () => {
+                const modal = mealCard.querySelector('.image-modal')
+                if (modal) modal.classList.toggle('hidden')
+            }
+            contentContainer.appendChild(thumbnail)
 
-            const nutritionDiv = document.createElement('div')
-            nutritionDiv.className = 'nutrition-info hidden'
-            mealCard.appendChild(nutritionDiv)
+            // 이미지 모달
+            const imageModal = document.createElement('div')
+            imageModal.className = 'image-modal hidden'
+            imageModal.innerHTML = `
+                <div class="modal-content">
+                    <img src="${meal.photoUrl}" alt="${meal.name}">
+                    <button class="modal-close">✕</button>
+                </div>
+            `
+            mealCard.appendChild(imageModal)
+
+            const closeBtn = imageModal.querySelector('.modal-close')
+            if (closeBtn) closeBtn.onclick = () => imageModal.classList.add('hidden')
+        }
+
+        mealCard.appendChild(contentContainer)
+
+        // 영양정보 (숨김 상태)
+        if (meal.nutrition && meal.nutrition.length > 0) {
+            const nutritionPanel = document.createElement('div')
+            nutritionPanel.className = 'nutrition-panel hidden'
+
+            let html = '<table class="compact-nutrition"><tr><th>메뉴</th><th>칼로리</th><th>탄수</th><th>단백</th><th>지방</th></tr>'
+            meal.nutrition.forEach(n => {
+                html += `<tr>
+                    <td>${n.name}${n.isMain ? ' ⭐' : ''}</td>
+                    <td>${n.calorie}</td>
+                    <td>${n.carbohydrate}g</td>
+                    <td>${n.protein}g</td>
+                    <td>${n.fat}g</td>
+                </tr>`
+            })
+            html += '</table>'
+            nutritionPanel.innerHTML = html
+            mealCard.appendChild(nutritionPanel)
+        }
+
+        // 영양정보 버튼 이벤트
+        const nutritionBtn = mealCard.querySelector('[data-action="nutrition"]')
+        const nutritionPanel = mealCard.querySelector('.nutrition-panel')
+
+        if (nutritionBtn && nutritionPanel) {
+            nutritionBtn.onclick = () => nutritionPanel.classList.toggle('hidden')
         }
 
         meals20FContainer.appendChild(mealCard)
@@ -134,32 +206,55 @@ function display20FMeals(meals) {
 }
 
 /**
- * 10층 메뉴 표시
+ * 메뉴/이미지 뷰 토글
+ */
+function toggleView(mealCard, view) {
+    const menuList = mealCard.querySelector('.detailed-menu-list')
+    const image = mealCard.querySelector('.meal-photo')
+    const buttons = mealCard.querySelectorAll('.btn-toggle')
+
+    if (view === 'menu') {
+        if (menuList) menuList.classList.remove('hidden')
+        if (image) image.classList.add('hidden')
+        buttons[0].classList.add('active')
+        buttons[1].classList.remove('active')
+    } else {
+        if (menuList) menuList.classList.add('hidden')
+        if (image) image.classList.remove('hidden')
+        buttons[0].classList.remove('active')
+        buttons[1].classList.add('active')
+    }
+}
+
+/**
+ * 10층 메뉴 표시 (압축 칩 형식)
  */
 function display10FMeals(meals) {
     meals10FContainer.innerHTML = ''
 
     meals.forEach(meal => {
-        const mealCard = document.createElement('div')
-        mealCard.className = 'meal-card meal-card-10f'
+        const mealBoard = document.createElement('div')
+        mealBoard.className = 'meal-board meal-board-10f'
 
-        const mealHeader = document.createElement('div')
-        mealHeader.className = 'meal-header'
-        mealHeader.innerHTML = `
-            <h3>${meal.courseName}</h3>
-        `
+        const header = document.createElement('div')
+        header.className = 'board-header-10f'
+        header.innerHTML = `<span class="course-badge-10f">${meal.courseName}</span>`
+        mealBoard.appendChild(header)
 
-        mealCard.appendChild(mealHeader)
-
-        // items 배열 표시
+        // items 배열을 인라인 칩으로 표시
         if (meal.items && meal.items.length > 0) {
-            const itemsList = document.createElement('div')
-            itemsList.className = 'menu-items'
-            itemsList.innerHTML = '<ul>' + meal.items.map(item => `<li>${item}</li>`).join('') + '</ul>'
-            mealCard.appendChild(itemsList)
+            const chipList = document.createElement('div')
+            chipList.className = 'chip-list-10f'
+
+            const chips = meal.items.map(item =>
+                `<span class="menu-chip-10f">• ${item}</span>`
+            ).join('')
+
+            chipList.innerHTML = chips
+            mealBoard.appendChild(chipList)
         }
 
-        meals10FContainer.appendChild(mealCard)
+        meals10FContainer.appendChild(mealBoard)
     })
 }
 
@@ -194,13 +289,17 @@ function toggleNutrition(mealCard, nutrition) {
 }
 
 // 날짜 변경 이벤트
-dateInput.addEventListener('change', loadAllMenus)
+dateInput.addEventListener('change', () => {
+    updateDayOfWeek()
+    loadAllMenus()
+})
 
 // 이전 날짜
 prevDayBtn.addEventListener('click', () => {
     const currentDate = new Date(dateInput.value)
     currentDate.setDate(currentDate.getDate() - 1)
     dateInput.valueAsDate = currentDate
+    updateDayOfWeek()
     loadAllMenus()
 })
 
@@ -209,5 +308,6 @@ nextDayBtn.addEventListener('click', () => {
     const currentDate = new Date(dateInput.value)
     currentDate.setDate(currentDate.getDate() + 1)
     dateInput.valueAsDate = currentDate
+    updateDayOfWeek()
     loadAllMenus()
 })

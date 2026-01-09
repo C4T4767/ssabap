@@ -20,19 +20,16 @@
                 <div style="display: flex; gap: 8px; align-items: center;">
                     <button type="button" id="prevDayBtn" class="btn btn-secondary"
                         style="width: 40px; padding: 10px;">◀</button>
-                    <input type="date" id="dateInput" style="flex: 1;">
+                    <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                        <input type="date" id="dateInput" style="width: 100%;">
+                        <div id="dayDisplay" style="text-align: center; font-size: 14px; color: #666; font-weight: 500;"></div>
+                    </div>
                     <button type="button" id="nextDayBtn" class="btn btn-secondary"
                         style="width: 40px; padding: 10px;">▶</button>
                 </div>
             </div>
         </div>
 
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>메뉴를 불러오는 중...</p>
-        </div>
-
-        <div id="error" class="error"></div>
 
         <!-- 20층 섹션 -->
         <div class="floor-section">
@@ -46,7 +43,6 @@
             <div id="meals10FContainer" class="meals-container meals-10f"></div>
         </div>
     </div>
-
     <script src="popup.js"></script>
 </body>
 
