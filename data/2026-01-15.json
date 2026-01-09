@@ -1,0 +1,164 @@
+{
+  "date": "2026-01-15",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "햄김치볶음밥",
+      "courseName": "A:한식",
+      "setName": "햄김치볶음밥&순대볶음",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260115/s20250707173819.jpg",
+      "nutrition": [
+        {
+          "name": "햄김치볶음밥",
+          "isMain": true,
+          "calorie": 532,
+          "carbohydrate": 97,
+          "sugar": 8,
+          "fiber": 1,
+          "fat": 11,
+          "protein": 12
+        },
+        {
+          "name": "미역국",
+          "isMain": false,
+          "calorie": 23,
+          "carbohydrate": 2,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 1
+        },
+        {
+          "name": "순대볶음",
+          "isMain": false,
+          "calorie": 293,
+          "carbohydrate": 49,
+          "sugar": 6,
+          "fiber": 2,
+          "fat": 8,
+          "protein": 7
+        },
+        {
+          "name": "치커리유자청무침",
+          "isMain": false,
+          "calorie": 29,
+          "carbohydrate": 7,
+          "sugar": 5,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "마카로니콘샐러드",
+          "isMain": false,
+          "calorie": 189,
+          "carbohydrate": 12,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 14,
+          "protein": 2
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "ICE초코",
+          "isMain": false,
+          "calorie": 41,
+          "carbohydrate": 7,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    },
+    {
+      "name": "옛날잔치국수",
+      "courseName": "B:일품",
+      "setName": "옛날잔치국수&완자전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260115/s20240628063903.png",
+      "nutrition": [
+        {
+          "name": "옛날잔치국수",
+          "isMain": true,
+          "calorie": 472,
+          "carbohydrate": 93,
+          "sugar": 7,
+          "fiber": 5,
+          "fat": 4,
+          "protein": 14
+        },
+        {
+          "name": "우엉양념밥",
+          "isMain": false,
+          "calorie": 385,
+          "carbohydrate": 89,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 7
+        },
+        {
+          "name": "완자전",
+          "isMain": false,
+          "calorie": 215,
+          "carbohydrate": 8,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 14,
+          "protein": 15
+        },
+        {
+          "name": "콩도넛",
+          "isMain": false,
+          "calorie": 286,
+          "carbohydrate": 23,
+          "sugar": 17,
+          "fiber": 0,
+          "fat": 20,
+          "protein": 4
+        },
+        {
+          "name": "마카로니콘샐러드",
+          "isMain": false,
+          "calorie": 189,
+          "carbohydrate": 12,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 14,
+          "protein": 2
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "ICE초코",
+          "isMain": false,
+          "calorie": 41,
+          "carbohydrate": 7,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-09T07:36:05.836Z"
+}
