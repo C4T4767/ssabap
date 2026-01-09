@@ -49,10 +49,10 @@ async function fetchMenuData() {
             fs.mkdirSync(dataDir, { recursive: true })
         }
 
-        // 오늘부터 7일치 메뉴 가져오기
+        // 오늘부터 10일치 메뉴 가져오기
         const today = new Date()
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 10; i++) {
             const targetDate = new Date(today)
             targetDate.setDate(today.getDate() + i)
 
