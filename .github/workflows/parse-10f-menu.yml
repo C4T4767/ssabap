@@ -4,7 +4,8 @@ on:
   push:
     paths:
       - 'images/**'
-
+  workflow_dispatch:
+  
 jobs:
   parse-menu:
     runs-on: ubuntu-latest
