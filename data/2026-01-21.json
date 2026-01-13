@@ -2,6 +2,163 @@
   "date": "2026-01-21",
   "restaurant": "멀티캠퍼스",
   "mealTime": "점심",
-  "meals": [],
-  "updatedAt": "2026-01-12T21:18:50.991Z"
+  "meals": [
+    {
+      "name": "비지찌개",
+      "courseName": "A:한식",
+      "setName": "비지찌개&생선커틀릿",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260121/s20240426084400.png",
+      "nutrition": [
+        {
+          "name": "비지찌개",
+          "isMain": true,
+          "calorie": 120,
+          "carbohydrate": 10,
+          "sugar": 4,
+          "fiber": 9,
+          "fat": 6,
+          "protein": 7
+        },
+        {
+          "name": "수수밥",
+          "isMain": false,
+          "calorie": 382,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "햄채소스크램블에그",
+          "isMain": false,
+          "calorie": 169,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 11,
+          "protein": 13
+        },
+        {
+          "name": "생선커틀릿&탈탈소스",
+          "isMain": false,
+          "calorie": 244,
+          "carbohydrate": 25,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 8,
+          "protein": 16
+        },
+        {
+          "name": "쫄면채소무침",
+          "isMain": false,
+          "calorie": 265,
+          "carbohydrate": 54,
+          "sugar": 14,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 8
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "식혜",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 14,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "장조림버터밥",
+      "courseName": "B:일품",
+      "setName": "장조림버터밥&버섯탕수",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260121/s20241003141339.png",
+      "nutrition": [
+        {
+          "name": "장조림버터밥",
+          "isMain": true,
+          "calorie": 623,
+          "carbohydrate": 93,
+          "sugar": 7,
+          "fiber": 1,
+          "fat": 15,
+          "protein": 27
+        },
+        {
+          "name": "미역국",
+          "isMain": false,
+          "calorie": 23,
+          "carbohydrate": 2,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 1
+        },
+        {
+          "name": "버섯탕수",
+          "isMain": false,
+          "calorie": 305,
+          "carbohydrate": 68,
+          "sugar": 22,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 5
+        },
+        {
+          "name": "쫄면채소무침",
+          "isMain": false,
+          "calorie": 265,
+          "carbohydrate": 54,
+          "sugar": 14,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 8
+        },
+        {
+          "name": "단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "볶음김치",
+          "isMain": false,
+          "calorie": 97,
+          "carbohydrate": 7,
+          "sugar": 5,
+          "fiber": 0,
+          "fat": 6,
+          "protein": 2
+        },
+        {
+          "name": "식혜",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 14,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-13T21:19:23.495Z"
 }

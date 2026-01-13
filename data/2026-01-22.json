@@ -1,0 +1,96 @@
+{
+  "date": "2026-01-22",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "햄버그스테이크",
+      "courseName": "A:한식",
+      "setName": "햄버그스테이크&토마토소스스파게티",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260122/s20241114100018.jpg",
+      "nutrition": [
+        {
+          "name": "햄버그스테이크",
+          "isMain": true,
+          "calorie": 498,
+          "carbohydrate": 95,
+          "sugar": 4,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 20
+        },
+        {
+          "name": "토마토소스스파게티",
+          "isMain": false,
+          "calorie": 541,
+          "carbohydrate": 66,
+          "sugar": 8,
+          "fiber": 2,
+          "fat": 26,
+          "protein": 14
+        },
+        {
+          "name": "제로탄산",
+          "isMain": false,
+          "calorie": 6,
+          "carbohydrate": 7,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "쌀밥&후리가케",
+          "isMain": false,
+          "calorie": 230,
+          "carbohydrate": 49,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 2,
+          "protein": 5
+        },
+        {
+          "name": "궁중떡볶이",
+          "isMain": false,
+          "calorie": 231,
+          "carbohydrate": 45,
+          "sugar": 4,
+          "fiber": 1,
+          "fat": 3.8,
+          "protein": 4
+        },
+        {
+          "name": "샐러드",
+          "isMain": false,
+          "calorie": 13,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 0,
+          "carbohydrate": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "피클",
+          "isMain": false,
+          "calorie": 53,
+          "carbohydrate": 13,
+          "sugar": 13,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-13T21:19:24.129Z"
+}

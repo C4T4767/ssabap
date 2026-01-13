@@ -2,6 +2,163 @@
   "date": "2026-01-19",
   "restaurant": "멀티캠퍼스",
   "mealTime": "점심",
-  "meals": [],
-  "updatedAt": "2026-01-12T21:18:50.574Z"
+  "meals": [
+    {
+      "name": "나주곰탕",
+      "courseName": "A:한식",
+      "setName": "나주곰탕&오징어김치전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260119/s20240801132357.png",
+      "nutrition": [
+        {
+          "name": "나주곰탕",
+          "isMain": true,
+          "calorie": 219,
+          "carbohydrate": 19,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 9,
+          "protein": 13
+        },
+        {
+          "name": "찰흑미밥",
+          "isMain": false,
+          "calorie": 346,
+          "carbohydrate": 79,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 6
+        },
+        {
+          "name": "오징어김치전",
+          "isMain": false,
+          "calorie": 187,
+          "carbohydrate": 30,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 11
+        },
+        {
+          "name": "미역줄기게맛살볶음",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 6,
+          "sugar": 2,
+          "fiber": 4,
+          "fat": 4,
+          "protein": 2
+        },
+        {
+          "name": "돌나물&초장",
+          "isMain": false,
+          "calorie": 64,
+          "carbohydrate": 14,
+          "sugar": 8,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "오미자차",
+          "isMain": false,
+          "calorie": 49,
+          "carbohydrate": 12,
+          "sugar": 11,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "된장덮밥",
+      "courseName": "B:일품",
+      "setName": "된장덮밥&오징어뭇국",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260119/s20250910092608.png",
+      "nutrition": [
+        {
+          "name": "된장덮밥",
+          "isMain": true,
+          "calorie": 488,
+          "carbohydrate": 90,
+          "sugar": 3,
+          "fiber": 5,
+          "fat": 7,
+          "protein": 19
+        },
+        {
+          "name": "오징어뭇국",
+          "isMain": false,
+          "calorie": 106,
+          "carbohydrate": 7,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 13
+        },
+        {
+          "name": "아몬드고구마맛탕",
+          "isMain": false,
+          "calorie": 268,
+          "carbohydrate": 59,
+          "sugar": 19,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "미역줄기게맛살볶음",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 6,
+          "sugar": 2,
+          "fiber": 4,
+          "fat": 4,
+          "protein": 2
+        },
+        {
+          "name": "돌나물&초장",
+          "isMain": false,
+          "calorie": 64,
+          "carbohydrate": 14,
+          "sugar": 8,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 37,
+          "carbohydrate": 8,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 0.4,
+          "protein": 2
+        },
+        {
+          "name": "오미자차",
+          "isMain": false,
+          "calorie": 49,
+          "carbohydrate": 12,
+          "sugar": 11,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-13T21:19:22.114Z"
 }
