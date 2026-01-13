@@ -2,6 +2,16 @@ const { GoogleGenerativeAI } = require('@google/generative-ai')
 const fs = require('fs')
 const path = require('path')
 
+function cleanMenuItems(items) {
+    return items
+        .map(item =>
+            item
+                .replace(/^[&＆]\s*/g, '')
+                .trim()
+        )
+        .filter(item => item.length > 0)
+}
+
 async function parseMenuImage(imagePath) {
     // Google Gemini API 클라이언트 생성
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
@@ -132,7 +142,7 @@ function convertToDateBasedJSON(menuData) {
                 name: day.meals['도시락'].join(', '),
                 courseName: '도시락',
                 setName: '10층 공존식단',
-                items: day.meals['도시락']
+                items: cleanMenuItems(day.meals['도시락'])
             })
         }
 
@@ -142,7 +152,7 @@ function convertToDateBasedJSON(menuData) {
                 name: day.meals['브런치'].join(', '),
                 courseName: '브런치',
                 setName: '10층 공존식단',
-                items: day.meals['브런치']
+                items: cleanMenuItems(day.meals['브런치'])
             })
         }
 
@@ -152,7 +162,7 @@ function convertToDateBasedJSON(menuData) {
                 name: day.meals['샐러드'].join(', '),
                 courseName: '샐러드',
                 setName: '10층 공존식단',
-                items: day.meals['샐러드']
+                items: cleanMenuItems((day.meals['샐러드'])
             })
         }
 
