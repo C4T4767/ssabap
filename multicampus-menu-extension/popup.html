@@ -22,7 +22,8 @@
                         style="width: 40px; padding: 10px;">◀</button>
                     <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
                         <input type="date" id="dateInput" style="width: 100%;">
-                        <div id="dayDisplay" style="text-align: center; font-size: 14px; color: #666; font-weight: 500;"></div>
+                        <div id="dayDisplay"
+                            style="text-align: center; font-size: 14px; color: #666; font-weight: 500;"></div>
                     </div>
                     <button type="button" id="nextDayBtn" class="btn btn-secondary"
                         style="width: 40px; padding: 10px;">▶</button>
@@ -30,17 +31,19 @@
             </div>
         </div>
 
+        <!-- 층별 메뉴 전체 래퍼 (스크롤 가능) -->
+        <div class="floors-wrapper">
+            <!-- 20층 섹션 -->
+            <div class="floor-section">
+                <h2 class="floor-title">20층 (웰스토리)</h2>
+                <div id="meals20FContainer" class="meals-container"></div>
+            </div>
 
-        <!-- 20층 섹션 -->
-        <div class="floor-section">
-            <h2 class="floor-title">20층 (웰스토리)</h2>
-            <div id="meals20FContainer" class="meals-container"></div>
-        </div>
-
-        <!-- 10층 섹션 -->
-        <div class="floor-section">
-            <h2 class="floor-title">10층 (공존식당)</h2>
-            <div id="meals10FContainer" class="meals-container meals-10f"></div>
+            <!-- 10층 섹션 -->
+            <div class="floor-section">
+                <h2 class="floor-title">10층 (공존식당)</h2>
+                <div id="meals10FContainer" class="meals-container meals-10f"></div>
+            </div>
         </div>
     </div>
     <script src="popup.js"></script>

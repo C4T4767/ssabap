@@ -90,16 +90,16 @@ body {
   margin: 8px 16px;
 }
 
+/* 층별 메뉴 전체 래퍼 (스크롤 영역) */
+.floors-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
 /* 층별 섹션 */
 .floor-section {
   border-top: 1px solid #e0e0e0;
   padding: 8px 16px;
-  flex-shrink: 0;
-}
-
-.floor-section:first-of-type {
-  flex: 1;
-  overflow-y: auto;
 }
 
 .floor-title {

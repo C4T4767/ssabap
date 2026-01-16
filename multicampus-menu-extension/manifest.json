@@ -1,12 +1,18 @@
 {
     "manifest_version": 3,
     "name": "Bap Time with SSAFY",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "멀티캠퍼스 점심 메뉴를 확인하세요",
-    "permissions": [],
+    "permissions": [
+        "notifications",
+        "alarms"
+    ],
     "host_permissions": [
         "https://raw.githubusercontent.com/*"
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
         "default_popup": "popup.html",
         "default_icon": {

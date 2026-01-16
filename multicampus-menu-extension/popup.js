@@ -13,12 +13,24 @@ const nextDayBtn = document.getElementById('nextDayBtn')
 const meals20FContainer = document.getElementById('meals20FContainer')
 const meals10FContainer = document.getElementById('meals10FContainer')
 
+/**
+ * KST 기준 현재 날짜를 반환 (0:00 기준)
+ */
+function getKSTDate() {
+    const now = new Date()
+    // UTC 시간에 9시간(KST offset)을 더해서 KST 날짜 계산
+    const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000))
+    // 시간 부분을 0으로 설정하여 날짜만 반환
+    kstTime.setUTCHours(0, 0, 0, 0)
+    return kstTime
+}
+
 // 요일 표시 업데이트
 function updateDayOfWeek() {
     const date = new Date(dateInput.value)
     const days = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
     const dayOfWeek = days[date.getDay()]
-    
+
     const dayDisplay = document.getElementById('dayDisplay')
     if (dayDisplay) {
         dayDisplay.textContent = dayOfWeek
@@ -27,7 +39,7 @@ function updateDayOfWeek() {
 
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    const today = new Date()
+    const today = getKSTDate()
     dateInput.valueAsDate = today
     updateDayOfWeek()
     loadAllMenus()

@@ -2,8 +2,8 @@ name: Fetch Welstory Menu Data
 
 on:
   schedule:
-    # 매일 오전 6시 (KST 기준, UTC는 -9시간이므로 21시)
-    - cron: '0 21 * * *'
+    # 매일 KST 0:00 (UTC는 -9시간이므로 15시)
+    - cron: '0 15 * * *'
   workflow_dispatch: # 수동 실행 가능
 
 jobs:
