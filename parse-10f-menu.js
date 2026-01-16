@@ -162,7 +162,7 @@ function convertToDateBasedJSON(menuData) {
                 name: day.meals['샐러드'].join(', '),
                 courseName: '샐러드',
                 setName: '10층 공존식단',
-                items: cleanMenuItems((day.meals['샐러드'])
+                items: cleanMenuItems(day.meals['샐러드'])
             })
         }
 
