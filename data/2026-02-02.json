@@ -1,0 +1,194 @@
+{
+  "date": "2026-02-02",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "참치김치찌개",
+      "courseName": "A:한식",
+      "setName": "참치김치찌개&꼬마돈가스",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/main/100026/1196.png",
+      "nutrition": [
+        {
+          "name": "참치김치찌개",
+          "isMain": true,
+          "calorie": 175,
+          "carbohydrate": 10,
+          "sugar": 6,
+          "fiber": 3,
+          "fat": 10,
+          "protein": 12
+        },
+        {
+          "name": "차조밥",
+          "isMain": false,
+          "calorie": 381,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "꼬마돈가스",
+          "isMain": false,
+          "calorie": 410,
+          "carbohydrate": 29,
+          "sugar": 10,
+          "fiber": 1,
+          "fat": 28,
+          "protein": 12
+        },
+        {
+          "name": "알감자조림",
+          "isMain": false,
+          "calorie": 87,
+          "carbohydrate": 19,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 3
+        },
+        {
+          "name": "세발나물된장무침",
+          "isMain": false,
+          "calorie": 36,
+          "carbohydrate": 4,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 2
+        },
+        {
+          "name": "김구이",
+          "isMain": false,
+          "calorie": 8,
+          "carbohydrate": 3,
+          "sugar": 0,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 37,
+          "carbohydrate": 8,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 0.4,
+          "protein": 2
+        },
+        {
+          "name": "모과차",
+          "isMain": false,
+          "calorie": 33,
+          "carbohydrate": 8,
+          "sugar": 7,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "오므라이스",
+      "courseName": "B:일품",
+      "setName": "오므라이스&세블락소시지구이",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260202/s20241003104726.png",
+      "nutrition": [
+        {
+          "name": "오므라이스",
+          "isMain": true,
+          "calorie": 506,
+          "carbohydrate": 99,
+          "sugar": 7,
+          "fiber": 1,
+          "fat": 6,
+          "protein": 14
+        },
+        {
+          "name": "세블락소시지구이",
+          "isMain": false,
+          "calorie": 280,
+          "carbohydrate": 11,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 19,
+          "protein": 17
+        },
+        {
+          "name": "일식장국",
+          "isMain": false,
+          "calorie": 18,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 2
+        },
+        {
+          "name": "두부땅콩강정",
+          "isMain": false,
+          "calorie": 239,
+          "carbohydrate": 21,
+          "sugar": 6,
+          "fiber": 6,
+          "fat": 12,
+          "protein": 11
+        },
+        {
+          "name": "그린샐러드",
+          "isMain": false,
+          "calorie": 13,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "요거트드레싱FS",
+          "isMain": false,
+          "calorie": 46,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 0
+        },
+        {
+          "name": "세발나물된장무침",
+          "isMain": false,
+          "calorie": 36,
+          "carbohydrate": 4,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 2
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "모과차",
+          "isMain": false,
+          "calorie": 33,
+          "carbohydrate": 8,
+          "sugar": 7,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-23T15:15:40.864Z"
+}
