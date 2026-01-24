@@ -1,0 +1,164 @@
+{
+  "date": "2026-02-03",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "설렁탕",
+      "courseName": "A:한식",
+      "setName": "설렁탕&오징어김치전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260203/s20220217165614.png",
+      "nutrition": [
+        {
+          "name": "설렁탕",
+          "isMain": true,
+          "calorie": 173,
+          "carbohydrate": 16,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 7,
+          "protein": 11
+        },
+        {
+          "name": "보리밥",
+          "isMain": false,
+          "calorie": 397,
+          "carbohydrate": 91,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 8
+        },
+        {
+          "name": "오징어김치전",
+          "isMain": false,
+          "calorie": 187,
+          "carbohydrate": 30,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 11
+        },
+        {
+          "name": "콩나물겨자냉채",
+          "isMain": false,
+          "calorie": 72,
+          "carbohydrate": 11,
+          "sugar": 6,
+          "fiber": 3,
+          "fat": 2,
+          "protein": 6
+        },
+        {
+          "name": "깻잎지절임",
+          "isMain": false,
+          "calorie": 50,
+          "carbohydrate": 10,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "석박지",
+          "isMain": false,
+          "calorie": 36,
+          "carbohydrate": 8,
+          "sugar": 3,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "수정과",
+          "isMain": false,
+          "calorie": 80,
+          "carbohydrate": 20,
+          "sugar": 19,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "해물비빔짬뽕",
+      "courseName": "B:일품",
+      "setName": "해물비빔짬뽕&찹쌀탕수육",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260203/s20250717092119.png",
+      "nutrition": [
+        {
+          "name": "해물비빔짬뽕",
+          "isMain": true,
+          "calorie": 697,
+          "carbohydrate": 96,
+          "sugar": 8,
+          "fiber": 7,
+          "fat": 16,
+          "protein": 38
+        },
+        {
+          "name": "미니현미밥",
+          "isMain": false,
+          "calorie": 62,
+          "carbohydrate": 14,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "계란팟국",
+          "isMain": false,
+          "calorie": 44,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 4
+        },
+        {
+          "name": "찹쌀탕수육",
+          "isMain": false,
+          "calorie": 397,
+          "carbohydrate": 47,
+          "sugar": 21,
+          "fiber": 0,
+          "fat": 20,
+          "protein": 7
+        },
+        {
+          "name": "단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "짜사이채무침",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 0
+        },
+        {
+          "name": "수정과",
+          "isMain": false,
+          "calorie": 80,
+          "carbohydrate": 20,
+          "sugar": 19,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-24T15:10:36.076Z"
+}
