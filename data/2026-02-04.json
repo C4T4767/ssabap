@@ -1,0 +1,174 @@
+{
+  "date": "2026-02-04",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "돼지불고기",
+      "courseName": "A:한식",
+      "setName": "돼지불고기&잡채어묵튀김깐풍",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/main/100026/1262.png",
+      "nutrition": [
+        {
+          "name": "돼지불고기",
+          "isMain": true,
+          "calorie": 243,
+          "carbohydrate": 15,
+          "sugar": 7,
+          "fiber": 2,
+          "fat": 15,
+          "protein": 21
+        },
+        {
+          "name": "흑미밥",
+          "isMain": false,
+          "calorie": 354,
+          "carbohydrate": 81,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 7
+        },
+        {
+          "name": "건새우아욱된장국",
+          "isMain": false,
+          "calorie": 52,
+          "carbohydrate": 5,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 5
+        },
+        {
+          "name": "감자채게맛살볶음",
+          "isMain": false,
+          "calorie": 86,
+          "carbohydrate": 11,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 3
+        },
+        {
+          "name": "잡채어묵튀김깐풍",
+          "isMain": false,
+          "calorie": 152,
+          "carbohydrate": 22,
+          "sugar": 6,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 10
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "쇠고기마늘종파스타",
+      "courseName": "B:일품",
+      "setName": "쇠고기마늘종파스타&반달감자튀김",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260204/s20240429105438.png",
+      "nutrition": [
+        {
+          "name": "쇠고기마늘종파스타",
+          "isMain": true,
+          "calorie": 638,
+          "carbohydrate": 93,
+          "sugar": 8,
+          "fiber": 7,
+          "fat": 20,
+          "protein": 27
+        },
+        {
+          "name": "미니찐빵",
+          "isMain": false,
+          "calorie": 73,
+          "carbohydrate": 13,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 2,
+          "protein": 2
+        },
+        {
+          "name": "제로탄산",
+          "isMain": false,
+          "calorie": 0,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "반달감자튀김&케찹",
+          "isMain": false,
+          "calorie": 167,
+          "carbohydrate": 22,
+          "sugar": 0,
+          "fiber": 2,
+          "fat": 8,
+          "protein": 2
+        },
+        {
+          "name": "샐러드",
+          "isMain": false,
+          "calorie": 13,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 49,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 4,
+          "protein": 0
+        },
+        {
+          "name": "무비트초절임",
+          "isMain": false,
+          "calorie": 25,
+          "carbohydrate": 6,
+          "sugar": 5,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-25T15:10:54.618Z"
+}
