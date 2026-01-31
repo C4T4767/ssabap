@@ -15,7 +15,7 @@ function cleanMenuItems(items) {
 async function parseMenuImage(imagePath) {
     // Google Gemini API 클라이언트 생성
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
 
     console.log(`Parsing image: ${imagePath}`)
 
