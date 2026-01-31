@@ -1,0 +1,164 @@
+{
+  "date": "2026-01-29",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "대파육개장",
+      "courseName": "A:한식",
+      "setName": "대파육개장&호박채치자전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260129/s20250522160943.png",
+      "nutrition": [
+        {
+          "name": "대파육개장",
+          "isMain": true,
+          "calorie": 192,
+          "carbohydrate": 16,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 10,
+          "protein": 10
+        },
+        {
+          "name": "혼합잡곡밥",
+          "isMain": false,
+          "calorie": 355,
+          "carbohydrate": 80,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "호박채치자전",
+          "isMain": false,
+          "calorie": 219,
+          "carbohydrate": 44,
+          "sugar": 0,
+          "fiber": 3,
+          "fat": 3,
+          "protein": 6
+        },
+        {
+          "name": "도토리묵무침",
+          "isMain": false,
+          "calorie": 69,
+          "carbohydrate": 13,
+          "sugar": 3,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "깻잎순겉절이",
+          "isMain": false,
+          "calorie": 27,
+          "carbohydrate": 4,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "아이스티(레몬)",
+          "isMain": false,
+          "calorie": 56,
+          "carbohydrate": 14,
+          "sugar": 14,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "오징어덮밥",
+      "courseName": "B:일품",
+      "setName": "오징어덮밥&군만두",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260129/s20250211172934.png",
+      "nutrition": [
+        {
+          "name": "오징어덮밥",
+          "isMain": true,
+          "calorie": 641,
+          "carbohydrate": 108,
+          "sugar": 15,
+          "fiber": 4,
+          "fat": 9,
+          "protein": 34
+        },
+        {
+          "name": "멸치육수",
+          "isMain": false,
+          "calorie": 4,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "군만두",
+          "isMain": false,
+          "calorie": 223,
+          "carbohydrate": 32,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 7,
+          "protein": 8
+        },
+        {
+          "name": "콘샐러드",
+          "isMain": false,
+          "calorie": 133,
+          "carbohydrate": 8,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 11,
+          "protein": 1
+        },
+        {
+          "name": "사각단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "깻잎순겉절이",
+          "isMain": false,
+          "calorie": 27,
+          "carbohydrate": 4,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "아이스티(레몬)",
+          "isMain": false,
+          "calorie": 56,
+          "carbohydrate": 14,
+          "sugar": 14,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-29T21:16:37.542Z"
+}

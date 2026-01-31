@@ -1,0 +1,164 @@
+{
+  "date": "2026-02-06",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "장터국밥",
+      "courseName": "A:한식",
+      "setName": "장터국밥&비엔나소시지케첩볶음",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260206/s20250912090604.png",
+      "nutrition": [
+        {
+          "name": "장터국밥",
+          "isMain": true,
+          "calorie": 488,
+          "carbohydrate": 94,
+          "sugar": 5,
+          "fiber": 8,
+          "fat": 5,
+          "protein": 21
+        },
+        {
+          "name": "혼합잡곡밥",
+          "isMain": false,
+          "calorie": 355,
+          "carbohydrate": 80,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "장떡",
+          "isMain": false,
+          "calorie": 123,
+          "carbohydrate": 27,
+          "sugar": 4,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 4
+        },
+        {
+          "name": "비엔나소시지케첩볶음",
+          "isMain": false,
+          "calorie": 383,
+          "carbohydrate": 21,
+          "sugar": 11,
+          "fiber": 2,
+          "fat": 27,
+          "protein": 15
+        },
+        {
+          "name": "도라지오이생채",
+          "isMain": false,
+          "calorie": 47,
+          "carbohydrate": 10,
+          "sugar": 6,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "아이스티(레몬)",
+          "isMain": false,
+          "calorie": 56,
+          "carbohydrate": 14,
+          "sugar": 14,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "치킨마요덮밥",
+      "courseName": "B:일품",
+      "setName": "치킨마요덮밥&고구마견과류조림",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260206/s20250822094006.png",
+      "nutrition": [
+        {
+          "name": "치킨마요덮밥",
+          "isMain": true,
+          "calorie": 920,
+          "carbohydrate": 121,
+          "sugar": 13,
+          "fiber": 2,
+          "fat": 37,
+          "protein": 27
+        },
+        {
+          "name": "팽이버섯장국",
+          "isMain": false,
+          "calorie": 19,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "고구마견과류조림",
+          "isMain": false,
+          "calorie": 348,
+          "carbohydrate": 54,
+          "sugar": 14,
+          "fiber": 4,
+          "fat": 13,
+          "protein": 7
+        },
+        {
+          "name": "푸실리샐러드",
+          "isMain": false,
+          "calorie": 124,
+          "carbohydrate": 25,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 4
+        },
+        {
+          "name": "도라지오이생채",
+          "isMain": false,
+          "calorie": 47,
+          "carbohydrate": 10,
+          "sugar": 6,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "아이스티(레몬)",
+          "isMain": false,
+          "calorie": 56,
+          "carbohydrate": 14,
+          "sugar": 14,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-30T21:17:45.686Z"
+}

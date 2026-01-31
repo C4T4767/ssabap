@@ -2,18 +2,6 @@ const { WelstoryClient } = require('welstory-api-wrapper')
 const fs = require('fs')
 const path = require('path')
 
-/**
- * KST 기준 현재 날짜를 반환 (0:00 기준)
- */
-function getKSTDate() {
-    const now = new Date()
-    // UTC 시간에 9시간(KST offset)을 더해서 KST 날짜 계산
-    const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000))
-    // 시간 부분을 0으로 설정하여 날짜만 반환
-    kstTime.setUTCHours(0, 0, 0, 0)
-    return kstTime
-}
-
 async function fetchMenuData() {
     const client = new WelstoryClient()
 
@@ -61,8 +49,8 @@ async function fetchMenuData() {
             fs.mkdirSync(dataDir, { recursive: true })
         }
 
-        // KST 기준 오늘부터 10일치 메뉴 가져오기
-        const today = getKSTDate()
+        // 오늘부터 10일치 메뉴 가져오기
+        const today = new Date()
 
         for (let i = 0; i < 10; i++) {
             const targetDate = new Date(today)

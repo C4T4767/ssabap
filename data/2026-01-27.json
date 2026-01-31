@@ -1,0 +1,184 @@
+{
+  "date": "2026-01-27",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "밀양돼지국밥",
+      "courseName": "A:한식",
+      "setName": "밀양돼지국밥&해물파전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260127/s20250327101627.png",
+      "nutrition": [
+        {
+          "name": "밀양돼지국밥",
+          "isMain": true,
+          "calorie": 466,
+          "carbohydrate": 73,
+          "sugar": 3,
+          "fiber": 4,
+          "fat": 11,
+          "protein": 24
+        },
+        {
+          "name": "흑미밥",
+          "isMain": false,
+          "calorie": 354,
+          "carbohydrate": 81,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 7
+        },
+        {
+          "name": "해물파전",
+          "isMain": false,
+          "calorie": 212,
+          "carbohydrate": 31,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 14
+        },
+        {
+          "name": "잡채",
+          "isMain": false,
+          "calorie": 210,
+          "carbohydrate": 38,
+          "sugar": 6,
+          "fiber": 1,
+          "fat": 6,
+          "protein": 1
+        },
+        {
+          "name": "마늘종고추장무침",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 12,
+          "sugar": 4,
+          "fiber": 3,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "모둠가스(등심돈가스",
+      "courseName": "B:일품",
+      "setName": "모둠가스(등심돈가스&생선커틀릿)",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260127/s20250213074610.png",
+      "nutrition": [
+        {
+          "name": "모둠가스(등심돈가스",
+          "isMain": true,
+          "calorie": 512,
+          "carbohydrate": 48,
+          "sugar": 22,
+          "fiber": 0,
+          "fat": 27,
+          "protein": 19
+        },
+        {
+          "name": "생선커틀릿)",
+          "isMain": false,
+          "calorie": 189,
+          "carbohydrate": 16,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 10,
+          "protein": 8
+        },
+        {
+          "name": "일식장국",
+          "isMain": false,
+          "calorie": 18,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 2
+        },
+        {
+          "name": "쌀밥&후리가케",
+          "isMain": false,
+          "calorie": 209,
+          "carbohydrate": 48,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 4
+        },
+        {
+          "name": "클링클컷(감자튀김)&케찹",
+          "isMain": false,
+          "calorie": 235,
+          "carbohydrate": 32,
+          "sugar": 0,
+          "fiber": 3,
+          "fat": 10,
+          "protein": 3
+        },
+        {
+          "name": "일식양배추샐러드",
+          "isMain": false,
+          "calorie": 11,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 0,
+          "carbohydrate": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-01-27T21:12:36.144Z"
+}
