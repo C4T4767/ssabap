@@ -46,6 +46,21 @@
             </div>
         </div>
     </div>
+
+    <!-- 오늘의 메뉴 골라주기 버튼 -->
+    <button id="menuPickerBtn" class="menu-picker-btn">🎲 오늘의 메뉴 골라주기</button>
+
+    <!-- 결과 모달 -->
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-content result-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>🎉 오늘의 메뉴는?</h2>
+            <div id="resultMenuName" class="result-menu-name"></div>
+            <p class="result-message">맛있게 드세요!</p>
+            <button id="closeResultBtn" class="confirm-btn">확인</button>
+        </div>
+    </div>
+
     <script src="popup.js"></script>
 </body>
 

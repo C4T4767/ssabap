@@ -323,3 +323,137 @@ nextDayBtn.addEventListener('click', () => {
     updateDayOfWeek()
     loadAllMenus()
 })
+
+/**
+ * 메뉴 골라주기 (룰렛) 로직
+ */
+const menuPickerBtn = document.getElementById('menuPickerBtn')
+
+if (menuPickerBtn) {
+    menuPickerBtn.addEventListener('click', () => {
+        const allMeals = document.querySelectorAll('.meal-board')
+
+        if (allMeals.length === 0) {
+            alert('선택할 메뉴가 없습니다. 날짜를 확인해주세요.')
+            return
+        }
+
+        // 3. Easter Egg: 연속 10회 클릭 시 "이제 골라주세요.."
+        const now = Date.now()
+        const lastClickTime = parseInt(localStorage.getItem('menuPickerLastClickTime') || '0')
+        let streak = parseInt(localStorage.getItem('menuPickerStreak') || '0')
+
+        // 5분(300,000ms) 이내에 다시 클릭했으면 연속 클릭으로 인정
+        if (now - lastClickTime < 5 * 60 * 1000) {
+            streak++
+        } else {
+            streak = 1
+        }
+
+        localStorage.setItem('menuPickerLastClickTime', now.toString())
+        localStorage.setItem('menuPickerStreak', streak.toString())
+
+        if (streak >= 10) {
+            menuPickerBtn.disabled = true
+            menuPickerBtn.textContent = '이제 골라주세요..'
+
+            // 5초 후 리셋
+            setTimeout(() => {
+                menuPickerBtn.disabled = false
+                menuPickerBtn.textContent = '🎲 오늘의 메뉴 골라주기'
+                localStorage.setItem('menuPickerStreak', '0') // 스트릭 초기화
+            }, 5000)
+
+            return // 룰렛 돌리지 않음
+        }
+
+        // 버튼 비활성화 (중복 클릭 방지)
+        menuPickerBtn.disabled = true
+        menuPickerBtn.textContent = '🎲 고르는 중...'
+
+        // 30 ~ 40 사이의 랜덤 숫자 생성 (USER REQUEST: 30~40)
+        const steps = Math.floor(Math.random() * 11) + 30
+        let currentStep = 0
+
+        // 시작 위치를 0~4 사이에서 랜덤으로 결정 (USER REQUEST: 1~5로 시작)
+        // 단, 메뉴 개수가 5개보다 적을 수도 있으므로 Math.min 사용
+        let currentIndex = Math.floor(Math.random() * Math.min(5, allMeals.length))
+
+        // 애니메이션 속도 조절 (점점 느려지게 할 수도 있지만, 일단 일정하게)
+        const intervalTime = 100
+
+        function highlightNext() {
+            // 이전 하이라이트 제거
+            allMeals.forEach(meal => meal.classList.remove('highlight'))
+
+            // 다음 메뉴 하이라이트
+            const targetIndex = currentIndex % allMeals.length
+            const targetMeal = allMeals[targetIndex]
+
+            targetMeal.classList.add('highlight')
+            targetMeal.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+
+            currentIndex++
+            currentStep++
+
+            if (currentStep < steps) {
+                // 다음 단계로
+                // 룰렛 느낌을 위해 마지막 10단계는 점점 느려지게
+                let nextDelay = intervalTime
+                if (steps - currentStep < 10) {
+                    nextDelay += (10 - (steps - currentStep)) * 30
+                }
+
+                setTimeout(highlightNext, nextDelay)
+            } else {
+                // 종료
+                setTimeout(() => {
+                    const finalMealName = targetMeal.querySelector('.main-dish')?.textContent ||
+                        targetMeal.querySelector('.menu-chip-10f')?.textContent?.replace('•', '') ||
+                        '이 메뉴'
+
+                    // 모달 표시
+                    const resultModal = document.getElementById('resultModal')
+                    const resultMenuName = document.getElementById('resultMenuName')
+
+                    if (resultModal && resultMenuName) {
+                        resultMenuName.textContent = finalMealName.trim()
+                        resultModal.classList.remove('hidden')
+
+                        // 폭죽 효과 (선택 사항)
+                        // confetti() 
+                    } else {
+                        // 모달이 없으면 기존 alert (fallback)
+                        alert(`🎉 오늘의 추천 메뉴는\n[${finalMealName.trim()}]\n입니다! 맛점하세요!`)
+                    }
+
+                    menuPickerBtn.disabled = false
+                    menuPickerBtn.textContent = '🎲 오늘의 메뉴 골라주기'
+                }, 500)
+            }
+        }
+
+        highlightNext()
+    })
+}
+
+// 모달 닫기 로직
+const resultModal = document.getElementById('resultModal')
+const closeBtn = document.querySelector('.close-btn')
+const closeResultBtn = document.getElementById('closeResultBtn')
+
+function closeModal() {
+    if (resultModal) {
+        resultModal.classList.add('hidden')
+    }
+}
+
+if (closeBtn) closeBtn.addEventListener('click', closeModal)
+if (closeResultBtn) closeResultBtn.addEventListener('click', closeModal)
+if (resultModal) {
+    resultModal.addEventListener('click', (e) => {
+        if (e.target === resultModal) {
+            closeModal()
+        }
+    })
+}
