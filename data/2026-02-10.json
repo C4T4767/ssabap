@@ -2,6 +2,183 @@
   "date": "2026-02-10",
   "restaurant": "멀티캠퍼스",
   "mealTime": "점심",
-  "meals": [],
-  "updatedAt": "2026-02-01T21:13:44.437Z"
+  "meals": [
+    {
+      "name": "춘천닭갈비",
+      "courseName": "A:한식",
+      "setName": "춘천닭갈비&미니비빔막국수",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260210/s20190321122825.png",
+      "nutrition": [
+        {
+          "name": "춘천닭갈비",
+          "isMain": true,
+          "calorie": 465,
+          "carbohydrate": 50,
+          "sugar": 14,
+          "fiber": 4,
+          "fat": 18,
+          "protein": 25
+        },
+        {
+          "name": "수수밥",
+          "isMain": false,
+          "calorie": 382,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "들깨미역국",
+          "isMain": false,
+          "calorie": 48,
+          "carbohydrate": 4,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "미니비빔막국수",
+          "isMain": false,
+          "calorie": 484,
+          "carbohydrate": 104,
+          "sugar": 5,
+          "fiber": 3,
+          "fat": 2,
+          "protein": 13
+        },
+        {
+          "name": "사각어묵볶음",
+          "isMain": false,
+          "calorie": 137,
+          "carbohydrate": 16,
+          "sugar": 5,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 8
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "석류차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 37,
+          "sugar": 35,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "바베큐폭찹",
+      "courseName": "B:일품",
+      "setName": "바베큐폭찹&생선가스",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260210/s20250604173440.png",
+      "nutrition": [
+        {
+          "name": "바베큐폭찹",
+          "isMain": true,
+          "calorie": 356,
+          "carbohydrate": 22,
+          "sugar": 7,
+          "fiber": 1,
+          "fat": 20,
+          "protein": 22
+        },
+        {
+          "name": "수수밥",
+          "isMain": false,
+          "calorie": 382,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "들깨미역국",
+          "isMain": false,
+          "calorie": 48,
+          "carbohydrate": 4,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "생선가스",
+          "isMain": false,
+          "calorie": 257,
+          "carbohydrate": 27,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 7,
+          "protein": 20
+        },
+        {
+          "name": "타르타르소스",
+          "isMain": false,
+          "calorie": 70,
+          "carbohydrate": 5,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 6,
+          "protein": 0
+        },
+        {
+          "name": "일식양배추샐러드",
+          "isMain": false,
+          "calorie": 11,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 0,
+          "carbohydrate": 0,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "석류차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 37,
+          "sugar": 35,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-08T21:15:58.044Z"
 }

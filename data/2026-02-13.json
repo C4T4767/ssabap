@@ -1,0 +1,194 @@
+{
+  "date": "2026-02-13",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "쇠고기완자떡국",
+      "courseName": "A:한식",
+      "setName": "쇠고기완자떡국&이색전",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260213/s20240726094442.png",
+      "nutrition": [
+        {
+          "name": "쇠고기완자떡국",
+          "isMain": true,
+          "calorie": 665,
+          "carbohydrate": 113,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 13,
+          "protein": 19
+        },
+        {
+          "name": "미니현미밥",
+          "isMain": false,
+          "calorie": 104,
+          "carbohydrate": 24,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "오색전&",
+          "isMain": false,
+          "calorie": 170,
+          "carbohydrate": 13,
+          "sugar": 2,
+          "fiber": 5,
+          "fat": 9,
+          "protein": 8
+        },
+        {
+          "name": "완자전",
+          "isMain": false,
+          "calorie": 215,
+          "carbohydrate": 8,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 14,
+          "protein": 15
+        },
+        {
+          "name": "버섯잡채",
+          "isMain": false,
+          "calorie": 227,
+          "carbohydrate": 39,
+          "sugar": 5,
+          "fiber": 2,
+          "fat": 7,
+          "protein": 2
+        },
+        {
+          "name": "청포묵무침",
+          "isMain": false,
+          "calorie": 44,
+          "carbohydrate": 8,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "현미볼강정",
+          "isMain": false,
+          "calorie": 85,
+          "carbohydrate": 20,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "식혜",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 14,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "황금빛가라아게카레",
+      "courseName": "B:일품",
+      "setName": "황금빛가라아게카레&단호박튀김",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/main/100034/1356.png",
+      "nutrition": [
+        {
+          "name": "황금빛가라아게카레",
+          "isMain": true,
+          "calorie": 801,
+          "carbohydrate": 131,
+          "sugar": 9,
+          "fiber": 4,
+          "fat": 23,
+          "protein": 26
+        },
+        {
+          "name": "가다랭이국",
+          "isMain": false,
+          "calorie": 10,
+          "carbohydrate": 2,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "단호박튀김",
+          "isMain": false,
+          "calorie": 225,
+          "carbohydrate": 44,
+          "sugar": 5,
+          "fiber": 6,
+          "fat": 4,
+          "protein": 5
+        },
+        {
+          "name": "청포묵무침",
+          "isMain": false,
+          "calorie": 45,
+          "carbohydrate": 8,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "마카로니콘샐러드",
+          "isMain": false,
+          "calorie": 194,
+          "carbohydrate": 13,
+          "sugar": 4,
+          "fiber": 2,
+          "fat": 15,
+          "protein": 3
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "현미볼강정",
+          "isMain": false,
+          "calorie": 85,
+          "carbohydrate": 20,
+          "sugar": 6,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "식혜",
+          "isMain": false,
+          "calorie": 55,
+          "carbohydrate": 14,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-08T21:16:00.276Z"
+}

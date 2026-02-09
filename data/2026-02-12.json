@@ -1,0 +1,184 @@
+{
+  "date": "2026-02-12",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "돼지고기고추장볶음",
+      "courseName": "A:한식",
+      "setName": "돼지고기고추장볶음&계란찜",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260212/s20250429172406.png",
+      "nutrition": [
+        {
+          "name": "돼지고기고추장볶음",
+          "isMain": true,
+          "calorie": 330,
+          "carbohydrate": 28,
+          "sugar": 14,
+          "fiber": 4,
+          "fat": 17,
+          "protein": 28
+        },
+        {
+          "name": "보리밥",
+          "isMain": false,
+          "calorie": 397,
+          "carbohydrate": 91,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 8
+        },
+        {
+          "name": "콩나물국",
+          "isMain": false,
+          "calorie": 15,
+          "carbohydrate": 2,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 2
+        },
+        {
+          "name": "계란찜",
+          "isMain": false,
+          "calorie": 127,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 8,
+          "protein": 12
+        },
+        {
+          "name": "시래기된장조림",
+          "isMain": false,
+          "calorie": 70,
+          "carbohydrate": 8,
+          "sugar": 1,
+          "fiber": 8,
+          "fat": 4,
+          "protein": 3
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "아이스티(복숭아맛)",
+          "isMain": false,
+          "calorie": 49,
+          "carbohydrate": 8,
+          "sugar": 12,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    },
+    {
+      "name": "모듬가스(등심돈가스&새우커틀릿)",
+      "courseName": "B:일품",
+      "setName": "모듬가스(등심돈가스&새우커틀릿)",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260212/s20250605144120.png",
+      "nutrition": [
+        {
+          "name": "모듬가스(등심돈가스&새우커틀릿)",
+          "isMain": true,
+          "calorie": 512,
+          "carbohydrate": 48,
+          "sugar": 22,
+          "fiber": 0,
+          "fat": 27,
+          "protein": 19
+        },
+        {
+          "name": "새우커틀릿",
+          "isMain": false,
+          "calorie": 134,
+          "carbohydrate": 13,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 5,
+          "protein": 9
+        },
+        {
+          "name": "크림스프",
+          "isMain": false,
+          "calorie": 89,
+          "carbohydrate": 14,
+          "sugar": 5,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 1
+        },
+        {
+          "name": "쌀밥&후리가케",
+          "isMain": false,
+          "calorie": 209,
+          "carbohydrate": 48,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 4
+        },
+        {
+          "name": "쫄면채소무침",
+          "isMain": false,
+          "calorie": 265,
+          "carbohydrate": 54,
+          "sugar": 14,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 8
+        },
+        {
+          "name": "그린샐러드",
+          "isMain": false,
+          "calorie": 13,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 67,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 6,
+          "protein": 0
+        },
+        {
+          "name": "양식단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "아이스티(복숭아맛)",
+          "isMain": false,
+          "calorie": 49,
+          "carbohydrate": 8,
+          "sugar": 12,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 1
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-08T21:15:59.493Z"
+}

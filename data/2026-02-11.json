@@ -1,0 +1,174 @@
+{
+  "date": "2026-02-11",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "[놀부]부대찌개",
+      "courseName": "A:한식",
+      "setName": "[놀부]부대찌개&연근땅콩강정",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260211/s20210903114858.png",
+      "nutrition": [
+        {
+          "name": "[놀부]부대찌개",
+          "isMain": true,
+          "calorie": 782,
+          "carbohydrate": 53,
+          "sugar": 5,
+          "fiber": 1,
+          "fat": 46,
+          "protein": 40
+        },
+        {
+          "name": "차조밥",
+          "isMain": false,
+          "calorie": 381,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "연근땅콩강정",
+          "isMain": false,
+          "calorie": 153,
+          "carbohydrate": 31,
+          "sugar": 8,
+          "fiber": 2,
+          "fat": 3,
+          "protein": 1
+        },
+        {
+          "name": "새송이버섯볶음",
+          "isMain": false,
+          "calorie": 65,
+          "carbohydrate": 7,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 2
+        },
+        {
+          "name": "상추겉절이",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "미트소스스파게티",
+      "courseName": "B:일품",
+      "setName": "미트소스스파게티&마늘바게트",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260211/s20211022160843.jpg",
+      "nutrition": [
+        {
+          "name": "미트소스스파게티",
+          "isMain": true,
+          "calorie": 548,
+          "carbohydrate": 114,
+          "sugar": 16,
+          "fiber": 7,
+          "fat": 2,
+          "protein": 23
+        },
+        {
+          "name": "탄산음료",
+          "isMain": false,
+          "calorie": 65,
+          "carbohydrate": 16,
+          "sugar": 15,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "마늘바게트",
+          "isMain": false,
+          "calorie": 103,
+          "carbohydrate": 15,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "으깬고구마샐러드",
+          "isMain": false,
+          "calorie": 152,
+          "carbohydrate": 23,
+          "sugar": 12,
+          "fiber": 0,
+          "fat": 6,
+          "protein": 1
+        },
+        {
+          "name": "그린샐러드",
+          "isMain": false,
+          "calorie": 13,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 44,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 0
+        },
+        {
+          "name": "오이피클",
+          "isMain": false,
+          "calorie": 64,
+          "carbohydrate": 15,
+          "sugar": 16,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "매실차",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 5,
+          "sugar": 4,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-08T21:15:58.700Z"
+}
