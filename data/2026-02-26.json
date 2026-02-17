@@ -1,0 +1,154 @@
+{
+  "date": "2026-02-26",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "차돌냉이된장찌개",
+      "courseName": "A:한식",
+      "setName": "차돌냉이된장찌개&고기산적조림",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260226/s20250813111102.png",
+      "nutrition": [
+        {
+          "name": "차돌냉이된장찌개",
+          "isMain": true,
+          "calorie": 195,
+          "carbohydrate": 20,
+          "sugar": 4,
+          "fiber": 7,
+          "fat": 7,
+          "protein": 15
+        },
+        {
+          "name": "흑미밥",
+          "isMain": false,
+          "calorie": 354,
+          "carbohydrate": 81,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 7
+        },
+        {
+          "name": "고기산적조림",
+          "isMain": false,
+          "calorie": 282,
+          "carbohydrate": 18,
+          "sugar": 5,
+          "fiber": 1,
+          "fat": 14,
+          "protein": 22
+        },
+        {
+          "name": "스크램블에그",
+          "isMain": false,
+          "calorie": 239,
+          "carbohydrate": 6,
+          "sugar": 1,
+          "fiber": 3,
+          "fat": 15,
+          "protein": 17
+        },
+        {
+          "name": "상추겉절이",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "블루베리맛홍초 ",
+          "isMain": false,
+          "calorie": 93,
+          "carbohydrate": 24,
+          "sugar": 13,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "옛날짬뽕밥",
+      "courseName": "B:일품",
+      "setName": "옛날짬뽕밥&군만두",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260226/s20251127122256.png",
+      "nutrition": [
+        {
+          "name": "옛날짬뽕밥",
+          "isMain": true,
+          "calorie": 749,
+          "carbohydrate": 125,
+          "sugar": 11,
+          "fiber": 6,
+          "fat": 16,
+          "protein": 28
+        },
+        {
+          "name": "군만두",
+          "isMain": false,
+          "calorie": 224,
+          "carbohydrate": 32,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 7,
+          "protein": 8
+        },
+        {
+          "name": "게맛살냉채",
+          "isMain": false,
+          "calorie": 100,
+          "carbohydrate": 20,
+          "sugar": 13,
+          "fiber": 1,
+          "fat": 1,
+          "protein": 4
+        },
+        {
+          "name": "짜사이채무침",
+          "isMain": false,
+          "calorie": 22,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 0
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "블루베리맛홍초 ",
+          "isMain": false,
+          "calorie": 93,
+          "carbohydrate": 24,
+          "sugar": 13,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-17T21:24:18.402Z"
+}
