@@ -1,0 +1,194 @@
+{
+  "date": "2026-03-03",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "돼지고기고추장볶음",
+      "courseName": "A:한식",
+      "setName": "오곡밥&돼지고기고추장볶음&부럼",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260303/s20250429172406.png",
+      "nutrition": [
+        {
+          "name": "돼지고기고추장볶음",
+          "isMain": true,
+          "calorie": 330,
+          "carbohydrate": 28,
+          "sugar": 14,
+          "fiber": 4,
+          "fat": 17,
+          "protein": 28
+        },
+        {
+          "name": "오곡밥",
+          "isMain": false,
+          "calorie": 216,
+          "carbohydrate": 45,
+          "sugar": 1,
+          "fiber": 3,
+          "fat": 2,
+          "protein": 5
+        },
+        {
+          "name": "쇠고기뭇국",
+          "isMain": false,
+          "calorie": 56,
+          "carbohydrate": 4,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 5
+        },
+        {
+          "name": "콩나물무침",
+          "isMain": false,
+          "calorie": 35,
+          "carbohydrate": 3,
+          "sugar": 0,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 4
+        },
+        {
+          "name": "무나물",
+          "isMain": false,
+          "calorie": 39,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 1,
+          "fat": 2,
+          "protein": 1
+        },
+        {
+          "name": "생김구이&간장",
+          "isMain": false,
+          "calorie": 17,
+          "carbohydrate": 2,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "수정과",
+          "isMain": false,
+          "calorie": 80,
+          "carbohydrate": 20,
+          "sugar": 19,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "부럼",
+          "isMain": false,
+          "calorie": 124,
+          "carbohydrate": 5,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 9.5,
+          "protein": 5
+        }
+      ]
+    },
+    {
+      "name": "해물볶음우동",
+      "courseName": "B:일품",
+      "setName": "해물볶음우동&만두강정&부럼",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260303/s20260108092305.png",
+      "nutrition": [
+        {
+          "name": "해물볶음우동",
+          "isMain": true,
+          "calorie": 609,
+          "carbohydrate": 97,
+          "sugar": 13,
+          "fiber": 6,
+          "fat": 12,
+          "protein": 23
+        },
+        {
+          "name": "가다랭이국",
+          "isMain": false,
+          "calorie": 10,
+          "carbohydrate": 2,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "우엉양념밥",
+          "isMain": false,
+          "calorie": 231,
+          "carbohydrate": 53,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 4
+        },
+        {
+          "name": "만두강정",
+          "isMain": false,
+          "calorie": 380,
+          "carbohydrate": 60,
+          "sugar": 13,
+          "fiber": 1,
+          "fat": 11,
+          "protein": 9
+        },
+        {
+          "name": "단무지",
+          "isMain": false,
+          "calorie": 5,
+          "carbohydrate": 1,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "수정과",
+          "isMain": false,
+          "calorie": 80,
+          "carbohydrate": 20,
+          "sugar": 19,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        },
+        {
+          "name": "부럼",
+          "isMain": false,
+          "calorie": 124,
+          "carbohydrate": 5,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 9.5,
+          "protein": 5
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-22T21:14:18.415Z"
+}
