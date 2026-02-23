@@ -1,0 +1,174 @@
+{
+  "date": "2026-03-04",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "해물순두부찌개",
+      "courseName": "A:한식",
+      "setName": "해물순두부찌개&햄계란말이",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/main/100026/1200.png",
+      "nutrition": [
+        {
+          "name": "해물순두부찌개",
+          "isMain": true,
+          "calorie": 166,
+          "carbohydrate": 7,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 7,
+          "protein": 20
+        },
+        {
+          "name": "차조밥",
+          "isMain": false,
+          "calorie": 381,
+          "carbohydrate": 87,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "햄계란말이&케찹",
+          "isMain": false,
+          "calorie": 202,
+          "carbohydrate": 2,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 13,
+          "protein": 18
+        },
+        {
+          "name": "느타리미역줄기볶음",
+          "isMain": false,
+          "calorie": 48,
+          "carbohydrate": 4,
+          "sugar": 1,
+          "fiber": 4,
+          "fat": 4,
+          "protein": 1
+        },
+        {
+          "name": "세발나물된장무침",
+          "isMain": false,
+          "calorie": 36,
+          "carbohydrate": 4,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 2
+        },
+        {
+          "name": "깍두기",
+          "isMain": false,
+          "calorie": 31,
+          "carbohydrate": 6,
+          "sugar": 3,
+          "fiber": 3,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "석류차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 37,
+          "sugar": 35,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "비프카레라이스",
+      "courseName": "B:일품",
+      "setName": "비프카레라이스&아게다시도우후",
+      "photoUrl": "http://samsungwelstory.com/data/manager/recipe/E110/20260304/s20241108084530.png",
+      "nutrition": [
+        {
+          "name": "비프카레라이스",
+          "isMain": true,
+          "calorie": 668,
+          "carbohydrate": 106,
+          "sugar": 7,
+          "fiber": 0,
+          "fat": 19,
+          "protein": 19
+        },
+        {
+          "name": "팽이버섯장국",
+          "isMain": false,
+          "calorie": 20,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "아게다시도우후",
+          "isMain": false,
+          "calorie": 171,
+          "carbohydrate": 14,
+          "sugar": 2,
+          "fiber": 5,
+          "fat": 9,
+          "protein": 9
+        },
+        {
+          "name": "일식양배추샐러드",
+          "isMain": false,
+          "calorie": 11,
+          "carbohydrate": 3,
+          "sugar": 1,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "드레싱",
+          "isMain": false,
+          "calorie": 30,
+          "carbohydrate": 4,
+          "sugar": 3,
+          "fiber": 0,
+          "fat": 2,
+          "protein": 0
+        },
+        {
+          "name": "세발나물된장무침",
+          "isMain": false,
+          "calorie": 36,
+          "carbohydrate": 4,
+          "sugar": 1,
+          "fiber": 2,
+          "fat": 2,
+          "protein": 2
+        },
+        {
+          "name": "배추김치",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 3,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 1,
+          "protein": 1
+        },
+        {
+          "name": "석류차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 37,
+          "sugar": 35,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-02-23T21:33:35.775Z"
+}
