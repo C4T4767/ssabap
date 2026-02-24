@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dateInput.valueAsDate = today
     updateDayOfWeek()
     loadAllMenus()
+    initQuickLinks()
 })
 
 /**
@@ -349,13 +350,12 @@ if (menuPickerBtn) {
         } else {
             streak = 1
         }
-
         localStorage.setItem('menuPickerLastClickTime', now.toString())
         localStorage.setItem('menuPickerStreak', streak.toString())
 
         if (streak >= 10) {
             menuPickerBtn.disabled = true
-            menuPickerBtn.textContent = '이제 골라주세요..'
+            menuPickerBtn.innerHTML = '이제 골라주세요.. <img src="icons/pepe128.png" width="16" height="16" style="vertical-align: middle; margin-left: 4px;">' // 페페 이미지 (128x128 원본을 16x16으로 리사이징하여 표시)
 
             // 5초 후 리셋
             setTimeout(() => {
@@ -456,4 +456,229 @@ if (resultModal) {
             closeModal()
         }
     })
+}
+
+// --- 즐겨찾기 (Quick Links) 기능 ---
+const DEFAULT_LINKS = [
+    { id: 'default-1', name: 'Edu SSAFY', url: 'https://edu.ssafy.com', isDefault: true }
+]
+
+let quickLinks = []
+let isEditMode = false
+let isExpanded = false
+
+function initQuickLinks() {
+    chrome.storage.sync.get({ quickLinks: DEFAULT_LINKS }, (data) => {
+        quickLinks = data.quickLinks
+        renderQuickLinks()
+    })
+}
+
+function saveQuickLinks() {
+    chrome.storage.sync.set({ quickLinks }, () => {
+        renderQuickLinks()
+    })
+}
+
+function renderQuickLinks() {
+    const grid = document.getElementById('quickLinksGrid')
+    if (!grid) return
+    grid.innerHTML = ''
+
+    if (isEditMode) {
+        grid.classList.add('edit-mode')
+    } else {
+        grid.classList.remove('edit-mode')
+    }
+
+    const allItems = []
+
+    quickLinks.forEach(link => {
+        const item = document.createElement('a')
+        item.className = 'quick-link-item user-link-item'
+
+        item.onclick = (e) => {
+            if (isEditMode) {
+                e.preventDefault()
+            } else {
+                item.href = link.url
+                item.target = '_blank'
+            }
+        }
+
+        let domain = ''
+        try {
+            domain = new URL(link.url).hostname
+        } catch (e) { }
+
+        const favIconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
+
+        let badgeHtml = ''
+        if (isEditMode && !link.isDefault) {
+            badgeHtml = `<div class="delete-badge" data-id="${link.id}">×</div>`
+        }
+
+        item.innerHTML = `
+            ${badgeHtml}
+            <div class="quick-link-icon">
+                <img src="${favIconUrl}" alt="icon" onerror="this.style.display='none'">
+            </div>
+            <span class="quick-link-name">${link.name}</span>
+        `
+
+        if (isEditMode && !link.isDefault) {
+            const badge = item.querySelector('.delete-badge')
+            if (badge) {
+                badge.onclick = (e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    quickLinks = quickLinks.filter(l => l.id !== link.id)
+                    saveQuickLinks()
+                }
+            }
+        }
+
+        allItems.push(item)
+    })
+
+    if (quickLinks.length < 10) {
+        const addBtn = document.createElement('div')
+        addBtn.className = 'quick-link-item action-link-btn add-link-btn'
+        addBtn.title = '추가'
+
+        // 심플한 크로스(+) SVG 아이콘
+        const addIconSvg = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`
+
+        addBtn.innerHTML = `
+            <div class="quick-link-icon">${addIconSvg}</div>
+            <span class="quick-link-name">추가</span>
+        `
+        addBtn.onclick = () => {
+            document.getElementById('addLinkForm').classList.remove('hidden')
+            document.getElementById('newLinkName').focus()
+        }
+        allItems.push(addBtn)
+    }
+
+    // 설정(편집) 버튼을 그리드 맨 끝에 항상 추가
+    const settingsBtn = document.createElement('div')
+    settingsBtn.className = `quick-link-item action-link-btn settings-link-btn ${isEditMode ? 'active' : ''}`
+    settingsBtn.title = isEditMode ? '완료' : '설정'
+
+    // 심플한 톱니바퀴 SVG 아이콘
+    const settingsIconSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`
+    // 심플한 체크마크 SVG 아이콘
+    const checkIconSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`
+
+    settingsBtn.innerHTML = `
+        <div class="quick-link-icon">
+            ${isEditMode ? checkIconSvg : settingsIconSvg}
+        </div>
+        <span class="quick-link-name">${isEditMode ? '완료' : '설정'}</span>
+    `
+    settingsBtn.onclick = () => {
+        isEditMode = !isEditMode
+        document.getElementById('addLinkForm').classList.add('hidden')
+        renderQuickLinks()
+    }
+    allItems.push(settingsBtn)
+
+    // 노출 로직 (기본 5개 노출, 총 아이템 개수가 5개를 초과하면 4개 + 1개(더보기) 로 변경)
+    if (!isExpanded && allItems.length > 5) {
+        const visibleItems = allItems.slice(0, 4)
+
+        const moreBtn = document.createElement('div')
+        moreBtn.className = 'quick-link-item action-link-btn more-link-btn'
+        moreBtn.title = '더보기'
+
+        // 더보기(점 3개) SVG 아이콘
+        const moreIconSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>`
+
+        moreBtn.innerHTML = `
+            <div class="quick-link-icon">${moreIconSvg}</div>
+            <span class="quick-link-name">더보기</span>
+        `
+        moreBtn.onclick = () => {
+            isExpanded = true
+            renderQuickLinks()
+        }
+        visibleItems.push(moreBtn)
+
+        visibleItems.forEach(el => grid.appendChild(el))
+    } else {
+        allItems.forEach(el => grid.appendChild(el))
+
+        if (isExpanded) {
+            // 접기 버튼 (선택사항, 너무 길어지면 닫을 수 있도록 함)
+            const lessBtn = document.createElement('div')
+            lessBtn.className = 'quick-link-item action-link-btn less-link-btn'
+            lessBtn.title = '접기'
+
+            // 위로 향하는 화살표 SVG 아이콘
+            const lessIconSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>`
+
+            lessBtn.innerHTML = `
+                <div class="quick-link-icon">${lessIconSvg}</div>
+                <span class="quick-link-name">접기</span>
+            `
+            lessBtn.onclick = () => {
+                isExpanded = false
+                renderQuickLinks()
+            }
+            grid.appendChild(lessBtn)
+        }
+    }
+}
+
+// (동적 렌더링으로 이동하므로 HTML 상의 버튼 이벤트 할당 제거 또는 예외처리용 더미로 남김)
+const editLinksBtn = document.getElementById('editLinksBtn')
+if (editLinksBtn) {
+    editLinksBtn.onclick = () => {
+        isEditMode = !isEditMode
+        document.getElementById('addLinkForm').classList.add('hidden')
+        renderQuickLinks()
+    }
+}
+
+const cancelAddLinkBtn = document.getElementById('cancelAddLinkBtn')
+if (cancelAddLinkBtn) {
+    cancelAddLinkBtn.onclick = (e) => {
+        e.preventDefault()
+        document.getElementById('addLinkForm').classList.add('hidden')
+        document.getElementById('newLinkName').value = ''
+        document.getElementById('newLinkUrl').value = ''
+    }
+}
+
+const saveLinkBtn = document.getElementById('saveLinkBtn')
+if (saveLinkBtn) {
+    saveLinkBtn.onclick = (e) => {
+        e.preventDefault()
+        const nameInput = document.getElementById('newLinkName')
+        const urlInput = document.getElementById('newLinkUrl')
+        const name = nameInput.value.trim()
+        let url = urlInput.value.trim()
+
+        if (!name || !url) {
+            alert('이름과 URL을 모두 입력해주세요.')
+            return
+        }
+
+        if (!/^https?:\/\//i.test(url)) {
+            url = 'https://' + url
+        }
+
+        quickLinks.push({
+            id: 'link-' + Date.now(),
+            name,
+            url,
+            isDefault: false
+        })
+
+        saveQuickLinks()
+
+        document.getElementById('addLinkForm').classList.add('hidden')
+        nameInput.value = ''
+        urlInput.value = ''
+    }
 }

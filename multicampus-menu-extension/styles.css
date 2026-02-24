@@ -30,6 +30,9 @@ body {
   padding: 12px 16px;
   border-bottom: 2px solid #f0f0f0;
   flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h1 {
@@ -38,32 +41,78 @@ body {
   margin: 0;
 }
 
-/* 컨트롤 */
+/* 컨트롤 (컴팩트 날짜 선택기) */
 .controls {
-  background: #f8f9fa;
-  padding: 10px 16px;
-  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 8px 16px;
+  border-bottom: 1px solid #f0f0f0;
   flex-shrink: 0;
 }
 
-.form-group {
-  margin-bottom: 0;
+.date-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 500;
-  font-size: 13px;
-  color: #555;
+.date-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8f9fa;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
 }
 
-.form-group input[type="date"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 2px solid #e0e0e0;
-  border-radius: 6px;
+.compact-date {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+/* Chrome 웹킷의 date 라벨/아이콘 약간 조정 */
+.compact-date::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.compact-date::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+.day-badge {
   font-size: 13px;
+  font-weight: 700;
+  color: #667eea;
+  background: #eef2ff;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.btn-icon {
+  background: transparent;
+  color: #667eea;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-icon:hover {
+  background: #f0f4ff;
 }
 
 .btn-secondary {
@@ -94,6 +143,8 @@ body {
 .floors-wrapper {
   flex: 1;
   overflow-y: auto;
+  padding-bottom: 45px;
+  /* 버튼 공간 확보 축소 */
 }
 
 /* 층별 섹션 */
@@ -353,7 +404,7 @@ body {
 /* 메뉴 골라주기 버튼 */
 .menu-picker-btn {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 20px;
   background: #ff4757;
   color: white;
@@ -482,4 +533,217 @@ body {
 
 .confirm-btn:hover {
   background-color: #5a6fd6;
+}
+
+/* ---------------------------------
+   바로가기 (Quick Links) 인라인 패널
+--------------------------------- */
+.quick-links-panel {
+  background: white;
+  padding: 4px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.quick-links-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.quick-links-header h2 {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.quick-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.quick-link-item:hover {
+  background: #f0f4ff;
+}
+
+.quick-link-icon {
+  width: 28px;
+  height: 28px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.quick-link-icon img {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+.quick-link-name {
+  font-size: 10px;
+  color: #555;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* 추가 버튼 및 설정 버튼 공통 */
+.action-link-btn .quick-link-icon {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  transition: all 0.2s;
+}
+
+.action-link-btn:hover .quick-link-icon {
+  background: #fff;
+  border-color: #667eea;
+  color: #667eea;
+  box-shadow: 0 2px 5px rgba(102, 126, 234, 0.2);
+}
+
+.action-link-btn:active .quick-link-icon {
+  transform: scale(0.95);
+}
+
+/* 추가, 더보기, 접기 버튼의 경우 아이콘 원형/점선 느낌 원할 시 */
+.add-link-btn .quick-link-icon,
+.more-link-btn .quick-link-icon,
+.less-link-btn .quick-link-icon {
+  background: #fafafa;
+  border: 1.5px dashed #ccc;
+}
+
+/* 설정(편집) 버튼 완료(active) 상태 🎨 */
+.settings-link-btn.active .quick-link-icon {
+  background: #ff4757;
+  border-color: #ff4757;
+  color: white;
+  box-shadow: 0 2px 6px rgba(255, 71, 87, 0.3);
+}
+
+.settings-link-btn.active .quick-link-name {
+  color: #ff4757;
+  font-weight: 600;
+}
+
+.settings-link-btn.active:hover .quick-link-icon {
+  background: #ff6b81;
+  border-color: #ff6b81;
+}
+
+/* 삭제 배지 (편집 모드) */
+.delete-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid white;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(255, 71, 87, 0.4);
+  transition: transform 0.2s;
+}
+
+.delete-badge:hover {
+  background: #e84118;
+  transform: scale(1.15);
+}
+
+/* 편집 모드일 때 유저 아이템의 시각적 힌트 (회색 테두리 등) */
+.edit-mode .user-link-item .quick-link-icon {
+  border: 1.5px solid #eee;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
+}
+
+.edit-mode .user-link-item:hover .quick-link-icon {
+  opacity: 1;
+  border-color: #ff4757;
+}
+
+
+
+/* 추가 폼 */
+.add-link-form {
+  margin-top: 10px;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.add-link-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  outline: none;
+}
+
+.add-link-form input:focus {
+  border-color: #667eea;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #5a6fd6;
 }

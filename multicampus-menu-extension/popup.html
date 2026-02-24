@@ -14,20 +14,36 @@
             <h1>🍽️ 멀티캠퍼스 점심 메뉴</h1>
         </div>
 
-        <div class="controls">
-            <div class="form-group">
-                <label>날짜</label>
-                <div style="display: flex; gap: 8px; align-items: center;">
-                    <button type="button" id="prevDayBtn" class="btn btn-secondary"
-                        style="width: 40px; padding: 10px;">◀</button>
-                    <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
-                        <input type="date" id="dateInput" style="width: 100%;">
-                        <div id="dayDisplay"
-                            style="text-align: center; font-size: 14px; color: #666; font-weight: 500;"></div>
-                    </div>
-                    <button type="button" id="nextDayBtn" class="btn btn-secondary"
-                        style="width: 40px; padding: 10px;">▶</button>
+        <!-- 바로가기 인라인 패널 -->
+        <div id="quickLinksPanel" class="quick-links-panel">
+
+            <div id="quickLinksGrid" class="quick-links-grid">
+                <!-- 아이템들이 여기에 동적으로 추가됩니다 -->
+            </div>
+
+            <!-- 링크 추가 폼 -->
+            <div id="addLinkForm" class="add-link-form hidden">
+                <div style="display: flex; gap: 4px; margin-bottom: 4px;">
+                    <input type="text" id="newLinkName" placeholder="이름 (예: 내 블로그)" maxlength="12" style="flex: 1;">
                 </div>
+                <div style="display: flex; gap: 4px; margin-bottom: 4px;">
+                    <input type="url" id="newLinkUrl" placeholder="URL (예: https://...)" style="flex: 1;">
+                </div>
+                <div class="form-actions">
+                    <button id="cancelAddLinkBtn" class="btn btn-secondary btn-sm">취소</button>
+                    <button id="saveLinkBtn" class="btn btn-primary btn-sm">저장</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="date-selector">
+                <button type="button" id="prevDayBtn" class="btn btn-icon">◀</button>
+                <div class="date-display">
+                    <input type="date" id="dateInput" class="compact-date">
+                    <span id="dayDisplay" class="day-badge"></span>
+                </div>
+                <button type="button" id="nextDayBtn" class="btn btn-icon">▶</button>
             </div>
         </div>
 
