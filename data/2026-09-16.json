@@ -1,0 +1,174 @@
+{
+  "date": "2026-09-16",
+  "restaurant": "멀티캠퍼스",
+  "mealTime": "점심",
+  "meals": [
+    {
+      "name": "돼지고기김치볶음",
+      "courseName": "A:한식",
+      "setName": "돼지고기김치볶음&떡갈비피망조림",
+      "photoUrl": "https://img-welmenu.welstory.com/data/manager/recipe/E110/20260916/s20260410093413.png",
+      "nutrition": [
+        {
+          "name": "돼지고기김치볶음",
+          "isMain": true,
+          "calorie": 270,
+          "carbohydrate": 11,
+          "sugar": 7,
+          "fiber": 4,
+          "fat": 14,
+          "protein": 23
+        },
+        {
+          "name": "혼합잡곡밥",
+          "isMain": false,
+          "calorie": 355,
+          "carbohydrate": 80,
+          "sugar": 0,
+          "fiber": 0,
+          "fat": 1,
+          "protein": 7
+        },
+        {
+          "name": "들깨미역국",
+          "isMain": false,
+          "calorie": 48,
+          "carbohydrate": 4,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "떡갈비피망조림",
+          "isMain": false,
+          "calorie": 345,
+          "carbohydrate": 29,
+          "sugar": 12,
+          "fiber": 0,
+          "fat": 21,
+          "protein": 12
+        },
+        {
+          "name": "연두부찜&양념장",
+          "isMain": false,
+          "calorie": 62,
+          "carbohydrate": 5,
+          "sugar": 1,
+          "fiber": 0,
+          "fat": 3,
+          "protein": 4
+        },
+        {
+          "name": "부추생채",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 4,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "깻잎지절임",
+          "isMain": false,
+          "calorie": 50,
+          "carbohydrate": 10,
+          "sugar": 2,
+          "fiber": 2,
+          "fat": 0,
+          "protein": 2
+        },
+        {
+          "name": "복분자차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 38,
+          "sugar": 26,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    },
+    {
+      "name": "장조림버터밥",
+      "courseName": "B:일품",
+      "setName": "장조림버터밥&버섯탕수",
+      "photoUrl": "https://img-welmenu.welstory.com/data/manager/recipe/E110/20260916/s20241003141339.png",
+      "nutrition": [
+        {
+          "name": "장조림버터밥",
+          "isMain": true,
+          "calorie": 621,
+          "carbohydrate": 93,
+          "sugar": 8,
+          "fiber": 1,
+          "fat": 15,
+          "protein": 27
+        },
+        {
+          "name": "들깨미역국",
+          "isMain": false,
+          "calorie": 48,
+          "carbohydrate": 4,
+          "sugar": 0,
+          "fiber": 1,
+          "fat": 3,
+          "protein": 2
+        },
+        {
+          "name": "버섯탕수",
+          "isMain": false,
+          "calorie": 306,
+          "carbohydrate": 68,
+          "sugar": 22,
+          "fiber": 1,
+          "fat": 4,
+          "protein": 5
+        },
+        {
+          "name": "콘치즈구이",
+          "isMain": false,
+          "calorie": 148,
+          "carbohydrate": 22,
+          "sugar": 7,
+          "fiber": 3,
+          "fat": 5,
+          "protein": 5
+        },
+        {
+          "name": "부추생채",
+          "isMain": false,
+          "calorie": 21,
+          "carbohydrate": 4,
+          "sugar": 2,
+          "fiber": 1,
+          "fat": 0,
+          "protein": 1
+        },
+        {
+          "name": "김치볶음",
+          "isMain": false,
+          "calorie": 100,
+          "carbohydrate": 9,
+          "sugar": 6,
+          "fiber": 3,
+          "fat": 6,
+          "protein": 3
+        },
+        {
+          "name": "복분자차",
+          "isMain": false,
+          "calorie": 150,
+          "carbohydrate": 38,
+          "sugar": 26,
+          "fiber": 0,
+          "fat": 0,
+          "protein": 0
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-09-07T23:06:33.581Z"
+}
